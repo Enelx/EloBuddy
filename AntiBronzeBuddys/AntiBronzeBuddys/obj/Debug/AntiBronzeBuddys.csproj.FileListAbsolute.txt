@@ -1,0 +1,10 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AntiBronzeBuddys\AntiBronzeBuddys\bin\Debug\AntiBronzeBuddys.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AntiBronzeBuddys\AntiBronzeBuddys\bin\Debug\AntiBronzeBuddys.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AntiBronzeBuddys\AntiBronzeBuddys\bin\Debug\AntiBronzeBuddys.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AntiBronzeBuddys\AntiBronzeBuddys\bin\Debug\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AntiBronzeBuddys\AntiBronzeBuddys\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AntiBronzeBuddys\AntiBronzeBuddys\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AntiBronzeBuddys\AntiBronzeBuddys\bin\Debug\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AntiBronzeBuddys\AntiBronzeBuddys\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AntiBronzeBuddys\AntiBronzeBuddys\obj\Debug\AntiBronzeBuddys.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AntiBronzeBuddys\AntiBronzeBuddys\obj\Debug\AntiBronzeBuddys.pdb
