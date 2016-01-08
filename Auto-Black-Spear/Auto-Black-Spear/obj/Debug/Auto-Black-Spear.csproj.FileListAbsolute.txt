@@ -1,0 +1,11 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Black-Spear\Auto-Black-Spear\bin\Debug\Auto-Black-Spear.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Black-Spear\Auto-Black-Spear\bin\Debug\Auto-Black-Spear.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Black-Spear\Auto-Black-Spear\bin\Debug\Auto-Black-Spear.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Black-Spear\Auto-Black-Spear\bin\Debug\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Black-Spear\Auto-Black-Spear\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Black-Spear\Auto-Black-Spear\bin\Debug\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Black-Spear\Auto-Black-Spear\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Black-Spear\Auto-Black-Spear\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Black-Spear\Auto-Black-Spear\obj\Debug\Auto-Black-Spear.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Black-Spear\Auto-Black-Spear\obj\Debug\Auto-Black-Spear.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Black-Spear\Auto-Black-Spear\obj\Debug\Auto-Black-Spear.csprojResolveAssemblyReference.cache
