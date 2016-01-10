@@ -1,0 +1,11 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Bush-Revealer\Auto-Bush-Revealer\bin\Debug\Auto-Bush-Revealer.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Bush-Revealer\Auto-Bush-Revealer\obj\Debug\Auto-Bush-Revealer.csprojResolveAssemblyReference.cache
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Bush-Revealer\Auto-Bush-Revealer\bin\Debug\Auto-Bush-Revealer.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Bush-Revealer\Auto-Bush-Revealer\bin\Debug\Auto-Bush-Revealer.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Bush-Revealer\Auto-Bush-Revealer\bin\Debug\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Bush-Revealer\Auto-Bush-Revealer\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Bush-Revealer\Auto-Bush-Revealer\bin\Debug\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Bush-Revealer\Auto-Bush-Revealer\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Bush-Revealer\Auto-Bush-Revealer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Bush-Revealer\Auto-Bush-Revealer\obj\Debug\Auto-Bush-Revealer.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Auto-Bush-Revealer\Auto-Bush-Revealer\obj\Debug\Auto-Bush-Revealer.pdb
