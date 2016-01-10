@@ -1,0 +1,11 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ping-My-Buddy\Ping-My-Buddy\bin\Debug\Ping-My-Buddy.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ping-My-Buddy\Ping-My-Buddy\bin\Debug\Ping-My-Buddy.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ping-My-Buddy\Ping-My-Buddy\bin\Debug\Ping-My-Buddy.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ping-My-Buddy\Ping-My-Buddy\bin\Debug\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ping-My-Buddy\Ping-My-Buddy\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ping-My-Buddy\Ping-My-Buddy\bin\Debug\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ping-My-Buddy\Ping-My-Buddy\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ping-My-Buddy\Ping-My-Buddy\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ping-My-Buddy\Ping-My-Buddy\obj\Debug\Ping-My-Buddy.csprojResolveAssemblyReference.cache
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ping-My-Buddy\Ping-My-Buddy\obj\Debug\Ping-My-Buddy.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ping-My-Buddy\Ping-My-Buddy\obj\Debug\Ping-My-Buddy.pdb
