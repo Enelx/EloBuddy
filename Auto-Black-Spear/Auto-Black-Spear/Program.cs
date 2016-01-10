@@ -27,7 +27,7 @@ namespace Auto_Black_Spear
             Menu = MainMenu.AddMenu("Auto-Black-Spear", "AutoBlackSpear");
             Menu.Add("TrueBlack", new CheckBox("Activate Auto Black Spear"));
 
-            Core.DelayAction(TheBlackSpear, 2000);
+            Core.DelayAction(TheBlackSpear, 1000);
 
             Game.OnUpdate += On_Update;
         }
