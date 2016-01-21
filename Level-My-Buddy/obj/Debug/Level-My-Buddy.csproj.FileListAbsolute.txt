@@ -1,0 +1,11 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Level-My-Buddy\Level-My-Buddy\bin\Debug\Level-My-Buddy.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Level-My-Buddy\Level-My-Buddy\obj\Debug\Level-My-Buddy.csprojResolveAssemblyReference.cache
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Level-My-Buddy\Level-My-Buddy\bin\Debug\Level-My-Buddy.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Level-My-Buddy\Level-My-Buddy\bin\Debug\Level-My-Buddy.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Level-My-Buddy\Level-My-Buddy\bin\Debug\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Level-My-Buddy\Level-My-Buddy\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Level-My-Buddy\Level-My-Buddy\bin\Debug\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Level-My-Buddy\Level-My-Buddy\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Level-My-Buddy\Level-My-Buddy\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Level-My-Buddy\Level-My-Buddy\obj\Debug\Level-My-Buddy.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Level-My-Buddy\Level-My-Buddy\obj\Debug\Level-My-Buddy.pdb
