@@ -92,8 +92,6 @@ namespace Predator_Rengar
 
                 if (Player.Instance.HasBuff("RengarR"))
                 {
-                    Orbwalker.DisableMovement = true;
-
                     if (Item.HasItem(3142) && Item.CanUseItem(3142) && Return.UseItemYoumuus)
                         Item.UseItem(3142);
                 }
