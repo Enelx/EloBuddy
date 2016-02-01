@@ -16,7 +16,7 @@ namespace Predator_Rengar
             RengarUI.AddGroupLabel("Tonight we hunt !");
             RengarUI.AddSeparator();
             RengarUI.AddLabel("Developer    :   Enelx");
-            RengarUI.AddLabel("Version          :   1.0.0.0");
+            RengarUI.AddLabel("Version          :   1.0.1.0");
 
             // Predator Rengar :: Combo Menu
             ComboUI = RengarUI.AddSubMenu("Combo");

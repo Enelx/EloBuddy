@@ -14,9 +14,13 @@ namespace Predator_Rengar.Modes
 
         public static void Execute()
         {
+
             if (!Return.WillLeap)
             {
                 var t = TargetSelector.GetTarget(Spells.E.Range, DamageType.Physical);
+
+                if (TargetSelector.SelectedTarget.IsValidTarget(2500))
+                    t = TargetSelector.SelectedTarget;
 
                 if (t != null && t.IsValidTarget(Spells.E.Range) && Spells.E.IsReady() && (!Return.HaveFullFerocity || t.IsValidTarget(Player.Instance.GetAutoAttackRange(t))) && Return.UseECombo)
                 {
@@ -26,7 +30,11 @@ namespace Predator_Rengar.Modes
                         Spells.E.Cast(t.ServerPosition);
                 }
 
-                t = TargetSelector.GetTarget(Spells.W.Range, DamageType.Physical);
+ 
+                if (TargetSelector.SelectedTarget.IsValidTarget(2500))
+                    t = TargetSelector.SelectedTarget;
+                else
+                    t = TargetSelector.GetTarget(Spells.W.Range, DamageType.Physical);
 
                 if (t != null && t.IsValidTarget(Spells.W.Range) && Spells.W.IsReady() && !Return.HaveFullFerocity)
                     Spells.W.Cast();
