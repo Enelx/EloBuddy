@@ -5,8 +5,10 @@ using System.Drawing;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
+using EloBuddy.SDK.Enumerations;
 using SharpDX;
 using color = System.Drawing.Color;
+
 
 
 namespace Big_Brother
@@ -24,6 +26,7 @@ namespace Big_Brother
             MenuDesigner.Initialize();
 
             Drawing.OnDraw += OnDraw;
+            Teleport.OnTeleport += OnTeleport;
         }
 
         private static void OnDraw(EventArgs args)
@@ -78,6 +81,27 @@ namespace Big_Brother
                         else
                             Drawing.DrawText(Return.SpyXpos + 205, Return.SpyYpos + gapPos, color.Yellow, "R /");
                     }
+                }
+            }
+        }
+
+        private static void OnTeleport(Obj_AI_Base sender, Teleport.TeleportEventArgs args)
+        {
+            if (sender.Team == Player.Instance.Team) return;
+
+            if (Return.SpyRecall)
+            {
+                if (args.Status == TeleportStatus.Start)
+                {
+                    Chat.Print(sender.BaseSkinName + " [started] Recall with " + (int)sender.Health + " health");
+                }
+                if (args.Status == TeleportStatus.Abort)
+                {
+                    Chat.Print(sender.BaseSkinName + " [aborted] Recall with " + (int)sender.Health + " health");
+                }
+                if (args.Status == TeleportStatus.Finish)
+                {
+                    Chat.Print(sender.BaseSkinName + " [finished] Recall");
                 }
             }
         }

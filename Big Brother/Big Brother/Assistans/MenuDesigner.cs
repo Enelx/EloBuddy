@@ -16,7 +16,7 @@ namespace Big_Brother
             BigBroUI.AddGroupLabel("Your RIOT Secret Service");
             BigBroUI.AddSeparator();
             BigBroUI.AddLabel("Developer    :   Enelx");
-            BigBroUI.AddLabel("Version          :   1.0.0.0");
+            BigBroUI.AddLabel("Version          :   1.0.1.0");
 
             // Big Brother :: Spy Menu
             SpyUI = BigBroUI.AddSubMenu("Spy");
@@ -30,6 +30,7 @@ namespace Big_Brother
             SpyUI.Add("SpyH", new CheckBox("Spy enemy life"));
             SpyUI.Add("SpyF", new CheckBox("Spy enemy flash cdr"));
             SpyUI.Add("SpyR", new CheckBox("Spy enemy ultimate cdr"));
+            SpyUI.Add("SpyC", new CheckBox("Log enemy recall"));
         }
 
         public static void Initialize()

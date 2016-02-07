@@ -44,5 +44,9 @@ namespace Big_Brother
         public static bool SpyUltimate
         { get { return GetCheckbox(MenuDesigner.SpyUI, "SpyR"); } }
 
+        // Return Spy Menu :: Recall
+        public static bool SpyRecall
+        { get { return GetCheckbox(MenuDesigner.SpyUI, "SpyC"); } }
+
     }
 }
