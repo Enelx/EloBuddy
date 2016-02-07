@@ -1,0 +1,10 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Debug\Big Brother.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Debug\Big Brother.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Debug\Big Brother.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Debug\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Debug\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\obj\Debug\Big Brother.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\obj\Debug\Big Brother.pdb

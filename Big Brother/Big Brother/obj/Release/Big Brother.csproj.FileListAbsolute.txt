@@ -1,0 +1,11 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Release\Big Brother.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Release\Big Brother.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Release\Big Brother.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Release\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Release\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Release\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\bin\Release\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\obj\Release\Big Brother.csprojResolveAssemblyReference.cache
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\obj\Release\Big Brother.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Big Brother\Big Brother\obj\Release\Big Brother.pdb
