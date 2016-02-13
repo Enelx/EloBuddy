@@ -50,7 +50,7 @@ namespace Predator_Rengar
             {
                 foreach (var hero in EntityManager.Heroes.Enemies.Where(x => x.IsValidTarget(Spells.W.Range) && !x.HasBuffOfType(BuffType.Invulnerability)))
                 {
-                    if (Player.Instance.GetSpellDamage(hero, SpellSlot.W) > hero.Health + 15)
+                    if (Player.Instance.GetSpellDamage(hero, SpellSlot.W) > hero.TotalShieldHealth() + 15)
                     {
                         Spells.W.Cast();
                     }
@@ -61,7 +61,7 @@ namespace Predator_Rengar
             {
                 foreach (var hero in EntityManager.Heroes.Enemies.Where(x => x.IsValidTarget(Spells.E.Range) && !x.HasBuffOfType(BuffType.Invulnerability)))
                 {
-                    if (Player.Instance.GetSpellDamage(hero, SpellSlot.E) > hero.Health + 15)
+                    if (Player.Instance.GetSpellDamage(hero, SpellSlot.E) > hero.TotalShieldHealth() + 15)
                     {
                         Spells.E.Cast(hero.ServerPosition);
                     }
