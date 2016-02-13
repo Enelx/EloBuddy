@@ -7,7 +7,7 @@ namespace Predator_Rengar
     {
         public const string MenuName = "Predator Rengar";
 
-        public static readonly Menu RengarUI, ComboUI, ClearUI, MiscUI;
+        public static readonly Menu RengarUI, ComboUI, ClearUI, KsUI, MiscUI;
 
         static MenuDesigner()
         {
@@ -16,7 +16,7 @@ namespace Predator_Rengar
             RengarUI.AddGroupLabel("Tonight we hunt !");
             RengarUI.AddSeparator();
             RengarUI.AddLabel("Developer    :   Enelx");
-            RengarUI.AddLabel("Version          :   1.0.1.0");
+            RengarUI.AddLabel("Version          :   1.1.1.0");
 
             // Predator Rengar :: Combo Menu
             ComboUI = RengarUI.AddSubMenu("Combo");
@@ -38,10 +38,19 @@ namespace Predator_Rengar
             ClearUI.AddGroupLabel("Clear :: Ferocity");
             ClearUI.Add("SaveFerocity", new CheckBox("Save Ferocity"));
 
+            // Predator Rengar :: Killsteal Menu
+
+            KsUI = RengarUI.AddSubMenu("Killsteal");
+            KsUI.AddGroupLabel("Killsteal :: Spells");
+            KsUI.Add("KsW", new CheckBox("Use W"));
+            KsUI.Add("KsE", new CheckBox("Use E"));
+
             // Predator Rengar :: Misc Menu
             MiscUI = RengarUI.AddSubMenu("Misc");
             MiscUI.AddGroupLabel("Misc :: Settings");
             MiscUI.Add("AutoHeal", new Slider("Auto heal %", 20, 0, 100));
+            MiscUI.AddSeparator();
+            MiscUI.Add("InterE", new CheckBox("Use E for Interrupt"));
             MiscUI.AddSeparator();
             MiscUI.AddGroupLabel("Misc :: Items");
             MiscUI.Add("UseTiamat", new CheckBox("Use Tiamat"));

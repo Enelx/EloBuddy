@@ -38,12 +38,35 @@ namespace Predator_Rengar
             Orbwalker.OnPreAttack += OnPreAttack;
             Dash.OnDash += OnDash;
             Orbwalker.OnPostAttack += OnPostAttack;
+            Interrupter.OnInterruptableSpell += OnInterruptableSpell;
         }
 
         private static void OnUpdate(EventArgs args)
         {
             if (Return.HaveFullFerocity && Player.Instance.HealthPercent <= Return.AutoHealPercent && Spells.W.IsReady())
                 Spells.W.Cast();
+
+            if (Return.UseWSteal && Spells.W.IsReady())
+            {
+                foreach (var hero in EntityManager.Heroes.Enemies.Where(x => x.IsValidTarget(Spells.W.Range) && !x.HasBuffOfType(BuffType.Invulnerability)))
+                {
+                    if (Player.Instance.GetSpellDamage(hero, SpellSlot.W) > hero.Health + 15)
+                    {
+                        Spells.W.Cast();
+                    }
+                }
+            }
+
+            if (Return.UseESteal && Spells.E.IsReady())
+            {
+                foreach (var hero in EntityManager.Heroes.Enemies.Where(x => x.IsValidTarget(Spells.E.Range) && !x.HasBuffOfType(BuffType.Invulnerability)))
+                {
+                    if (Player.Instance.GetSpellDamage(hero, SpellSlot.E) > hero.Health + 15)
+                    {
+                        Spells.E.Cast(hero.ServerPosition);
+                    }
+                }
+            }
         }
 
         private static void OnDraw(EventArgs args)
@@ -146,6 +169,17 @@ namespace Predator_Rengar
                         Item.UseItem(3074);
                     if (Item.HasItem(3748) && Item.CanUseItem(3748) && Return.UseItemTitanic)
                         Item.UseItem(3748);
+                }
+            }
+        }
+
+        private static void OnInterruptableSpell(Obj_AI_Base sender, Interrupter.InterruptableSpellEventArgs e)
+        {
+            if (Return.InterruptE && Return.HaveFullFerocity && Spells.E.IsReady())
+            {
+                if (sender.IsValidTarget(Spells.E.Range))
+                {
+                    Spells.E.Cast(sender.ServerPosition);
                 }
             }
         }

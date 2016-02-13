@@ -14,6 +14,5 @@ C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Predator Rengar\
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Predator Rengar\Predator Rengar\bin\Release\SharpDX.dll
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Predator Rengar\Predator Rengar\bin\Release\SharpDX.Direct3D9.dll
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Predator Rengar\Predator Rengar\bin\Release\Newtonsoft.Json.dll
-C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Predator Rengar\Predator Rengar\obj\Debug\Predator Rengar.csprojResolveAssemblyReference.cache
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Predator Rengar\Predator Rengar\obj\Debug\Predator Rengar.exe
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Predator Rengar\Predator Rengar\obj\Debug\Predator Rengar.pdb

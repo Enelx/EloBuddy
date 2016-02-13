@@ -38,6 +38,12 @@ namespace Predator_Rengar
             get { return GetSlider(MenuDesigner.MiscUI, "AutoHeal"); }
         }
 
+        // Return Misc Menu :: Interrupt E
+        public static bool InterruptE
+        {
+            get { return GetCheckbox(MenuDesigner.MiscUI, "InterE"); }
+        }
+
         // Return Misc Menu :: Draw Combo
         public static bool DrawComboMode
         {
@@ -114,6 +120,18 @@ namespace Predator_Rengar
         public static bool ClearSaveFerocity
         {
             get { return GetCheckbox(MenuDesigner.ClearUI, "SaveFerocity"); }
+        }
+
+        // Return Killsteal Menu :: Use W
+        public static bool UseWSteal
+        {
+            get { return GetCheckbox(MenuDesigner.KsUI, "KsW"); }
+        }
+
+        // Return Killsteal Menu :: Use E
+        public static bool UseESteal
+        {
+            get { return GetCheckbox(MenuDesigner.KsUI, "KsE"); }
         }
 
         // Return Rengar Passive Buff or IsDashing
