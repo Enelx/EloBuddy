@@ -1,0 +1,10 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Debug\Tsar Corki.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Debug\Tsar Corki.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Debug\Tsar Corki.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Debug\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Debug\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\obj\Debug\Tsar Corki.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\obj\Debug\Tsar Corki.pdb

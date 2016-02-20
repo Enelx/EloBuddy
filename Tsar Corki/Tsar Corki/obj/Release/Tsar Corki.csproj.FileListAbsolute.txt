@@ -1,0 +1,11 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Release\Tsar Corki.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Release\Tsar Corki.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Release\Tsar Corki.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Release\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Release\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Release\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\bin\Release\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\obj\Release\Tsar Corki.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\obj\Release\Tsar Corki.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Tsar Corki\Tsar Corki\obj\Release\Tsar Corki.csprojResolveAssemblyReference.cache
