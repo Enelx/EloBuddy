@@ -14,20 +14,13 @@ namespace Black_Swan_Akali.Modes
 
         public static void Execute()
         {
-            // Use Items
-
             var t = TargetSelector.GetTarget(Spells.Q.Range, DamageType.Magical);
 
-            if (t != null && Return.UseItemBilge && Items.bilge.IsOwned() && Items.bilge.IsReady() && Items.bilge.IsInRange(t))
-                Items.bilge.Cast(t);
-
-            if (t != null && Return.UseItemBotrk && Items.Botrk.IsOwned() && Items.Botrk.IsReady() && Items.Botrk.IsInRange(t))
-                Items.Botrk.Cast(t);
-
-            if (t != null && Return.UseItemHextech && Items.Hextech.IsOwned() && Items.Hextech.IsReady() && Items.Hextech.IsInRange(t))
-                Items.Hextech.Cast(t);
-
-            // Use Spells
+            if (t != null)
+            {
+                if (Return.UseAgressiveItems)
+                    Items.CastItems(t);
+            }
 
             if (Spells.Q.IsReady() && Return.UseQCombo)
             {

@@ -16,7 +16,7 @@ namespace Black_Swan_Akali
             AkaliUI.AddGroupLabel("As balance dictates.");
             AkaliUI.AddSeparator();
             AkaliUI.AddLabel("Developer    :   Enelx");
-            AkaliUI.AddLabel("Version          :   1.0.0.0");
+            AkaliUI.AddLabel("Version          :   1.1.0.0");
 
             // Black Swan Akali :: Combo Menu
             ComboUI = AkaliUI.AddSubMenu("Combo");
@@ -33,6 +33,10 @@ namespace Black_Swan_Akali
 
             // Black Swan Akali :: Clear Menu
             ClearUI = AkaliUI.AddSubMenu("Clear");
+            ClearUI.AddGroupLabel("Last Hit :: Spells");
+            ClearUI.Add("LastQ", new CheckBox("Use Q"));
+            ClearUI.Add("LastE", new CheckBox("Use E", false));
+            ClearUI.AddSeparator();
             ClearUI.AddGroupLabel("Lane Clear :: Spells / Settings");
             ClearUI.Add("ClearQ", new CheckBox("Use Q"));
             ClearUI.Add("ClearE", new CheckBox("Use E"));
@@ -57,9 +61,7 @@ namespace Black_Swan_Akali
             MiscUI.Add("FleeW", new CheckBox("Use W on Flee"));
             MiscUI.AddSeparator();
             MiscUI.AddGroupLabel("Misc :: Items");
-            MiscUI.Add("UseBilge", new CheckBox("Use Bilgewater"));
-            MiscUI.Add("UseBotrk", new CheckBox("Use Botrk"));
-            MiscUI.Add("UseHextech", new CheckBox("Use Hextech"));
+            MiscUI.Add("UseItems", new CheckBox("Use Agressive Items"));
             MiscUI.AddSeparator();
             MiscUI.AddGroupLabel("Misc :: Draw");
             MiscUI.Add("DrawQ", new CheckBox("Draw Q"));

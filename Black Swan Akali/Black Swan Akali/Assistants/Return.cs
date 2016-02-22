@@ -56,6 +56,18 @@ namespace Black_Swan_Akali
             get { return GetCheckbox(MenuDesigner.HarassUI, "HarassQ"); }
         }
 
+        // Lasthit Q
+        public static bool UseQLast
+        {
+            get { return GetCheckbox(MenuDesigner.ClearUI, "LastQ"); }
+        }
+
+        // Lasthit E
+        public static bool UseELast
+        {
+            get { return GetCheckbox(MenuDesigner.ClearUI, "LastE"); }
+        }
+
         // Clear Q
         public static bool UseQClear
         {
@@ -134,22 +146,10 @@ namespace Black_Swan_Akali
             get { return GetCheckbox(MenuDesigner.MiscUI, "DrawR"); }
         }
 
-        // Misc Bilgewater Cutlass
-        public static bool UseItemBilge
+        // Misc Use Items
+        public static bool UseAgressiveItems
         {
-            get { return GetCheckbox(MenuDesigner.MiscUI, "UseBilge"); }
-        }
-
-        // Misc Blade of the Ruined King
-        public static bool UseItemBotrk
-        {
-            get { return GetCheckbox(MenuDesigner.MiscUI, "UseBotrk"); }
-        }
-
-        // Misc Hextech Gunblade
-        public static bool UseItemHextech
-        {
-            get { return GetCheckbox(MenuDesigner.MiscUI, "UseHextech"); }
+            get { return GetCheckbox(MenuDesigner.MiscUI, "UseItems"); }
         }
     }
 }

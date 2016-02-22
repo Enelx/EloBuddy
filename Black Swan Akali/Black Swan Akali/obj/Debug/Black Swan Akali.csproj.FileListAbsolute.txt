@@ -8,4 +8,3 @@ C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\obj\Debug\Black Swan Akali.exe
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\obj\Debug\Black Swan Akali.pdb
-C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\obj\Debug\Black Swan Akali.csprojResolveAssemblyReference.cache

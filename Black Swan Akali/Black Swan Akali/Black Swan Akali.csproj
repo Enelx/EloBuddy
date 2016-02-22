@@ -62,6 +62,7 @@
     <Compile Include="Modes\Flee.cs" />
     <Compile Include="Modes\Harass.cs" />
     <Compile Include="Modes\Jungle.cs" />
+    <Compile Include="Modes\Lasthit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

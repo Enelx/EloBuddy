@@ -24,6 +24,9 @@ namespace Black_Swan_Akali
             if (OrbJungleClear)
                 Modes.Jungle.Execute();
 
+            if (OrbLastHit)
+                Modes.Lasthit.Execute();
+
             if (OrbFlee)
                 Modes.Flee.Execute();
         }
@@ -58,6 +61,14 @@ namespace Black_Swan_Akali
             get
             {
                 return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear);
+            }
+        }
+
+        public static bool OrbLastHit
+        {
+            get
+            {
+                return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit);
             }
         }
 
