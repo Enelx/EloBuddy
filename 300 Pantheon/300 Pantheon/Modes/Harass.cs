@@ -1,7 +1,6 @@
-﻿using System.Linq;
-using EloBuddy;
+﻿using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
+using _300_Pantheon.Assistants;
 
 namespace _300_Pantheon.Modes
 {

@@ -8,3 +8,6 @@ C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\obj\Debug\300 Pantheon.exe
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\obj\Debug\300 Pantheon.pdb
+C:\Users\iRaxe\Desktop\300 Pantheon\300 Pantheon\bin\Debug\300 Pantheon.exe.config
+C:\Users\iRaxe\Desktop\300 Pantheon\300 Pantheon\obj\Debug\300 Pantheon.exe
+C:\Users\iRaxe\Desktop\300 Pantheon\300 Pantheon\obj\Debug\300 Pantheon.pdb

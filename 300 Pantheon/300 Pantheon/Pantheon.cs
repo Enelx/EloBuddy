@@ -1,118 +1,68 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
-using EloBuddy.SDK.Enumerations;
+using EloBuddy.SDK.Menu;
 using EloBuddy.SDK.Rendering;
 using SharpDX;
+using _300_Pantheon.Assistants;
 
 namespace _300_Pantheon
 {
-    class Pantheon
+    internal class Pantheon
     {
-        static void Main(string[] args)
+        public static void OnProcessSpellCast(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
         {
-            Loading.OnLoadingComplete += OnLoadingComplete;
-        }
-
-        private static void OnLoadingComplete(EventArgs args)
-        {
-            // Validate Champion
-            if (Player.Instance.Hero != Champion.Pantheon) return;
-
-            // Initialize Classes
-            MenuDesigner.Initialize();
-            ModeController.Initialize();
-
-            //  Events
-            Game.OnUpdate += OnUpdate;
-            Obj_AI_Base.OnProcessSpellCast += OnProcessSpellCast;
-            Obj_AI_Base.OnBuffLose += OnBuffLose;
-            Orbwalker.OnPostAttack += OnPostAttack;
-            Interrupter.OnInterruptableSpell += OnInterruptableSpell;
-            Gapcloser.OnGapcloser += OnGapcloser;
-            Drawing.OnDraw += OnDraw;
-        }
-
-        private static void OnProcessSpellCast(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
-        {
-            if (sender.IsMe && args.SData.Name == Spells.E.Name )
+            if (sender.IsMe && args.SData.Name == Spells.E.Name)
             {
                 Orbwalker.DisableAttacking = true;
                 Orbwalker.DisableMovement = true;
             }
         }
 
-        private static void OnBuffLose(Obj_AI_Base sender, Obj_AI_BaseBuffLoseEventArgs args)
+        public static void OnBuffLose(Obj_AI_Base sender, Obj_AI_BaseBuffLoseEventArgs args)
         {
-            if (sender.IsMe && args.Buff.Name == "pantheonesound")
+            var buff = "pantheonesound";
+            if (sender.IsMe && args.Buff.Name == buff)
             {
                 Orbwalker.DisableAttacking = false;
                 Orbwalker.DisableMovement = false;
             }
         }
-
-        private static void OnUpdate(EventArgs args)
+        
+        public static void OnPostAttack(AttackableUnit target, EventArgs args)
         {
-            if (Return.UseQKs)
+            if (Return.UseAgressiveItems && ModeController.OrbCombo)
             {
-                if (!Spells.Q.IsReady()) return;
-
-                foreach (AIHeroClient target in EntityManager.Heroes.Enemies.Where(x => x.IsValidTarget(Spells.Q.Range) && !x.HasBuffOfType(BuffType.Invulnerability)))
-                {
-                    if ((Player.Instance.GetSpellDamage(target, SpellSlot.Q)) > target.TotalShieldHealth() + 5)
-                        Spells.Q.Cast(target);
-                }
-            }
-
-            if (Return.UseWKs)
-            {
-                if (!Spells.W.IsReady()) return;
-
-                foreach (AIHeroClient target in EntityManager.Heroes.Enemies.Where(x => x.IsValidTarget(Spells.W.Range) && !x.HasBuffOfType(BuffType.Invulnerability)))
-                {
-                    if ((Player.Instance.GetSpellDamage(target, SpellSlot.W)) > target.TotalShieldHealth())
-                        Spells.W.Cast(target);
-                }
+                Items.Useitems(target, 400);
             }
         }
 
-        private static void OnPostAttack(AttackableUnit target, EventArgs args)
+        public static void OnGapcloser(AIHeroClient sender, Gapcloser.GapcloserEventArgs e)
         {
-            if (ModeController.OrbCombo)
+            if (sender.IsMe || sender.IsAlly || sender.IsUnderEnemyturret()) return;
+
+            if (Return.UseWGapclose && sender.IsValidTarget(Spells.W.Range) && Spells.W.IsReady())
             {
-                if (Return.UseAgressiveItems && target != null)
-                {
-                    if (Items.Tiamat.IsReady() && target.IsValidTarget(Items.Tiamat.Range))
-                        Items.Tiamat.Cast();
-                    else if (Items.Hydra.IsReady() && target.IsValidTarget(Items.Hydra.Range))
-                        Items.Hydra.Cast();
-                }
-            }
-        }
-
-        private static void OnGapcloser(AIHeroClient sender, Gapcloser.GapcloserEventArgs e)
-        {
-            if (!sender.IsEnemy) return;
-
-            if (Return.UseWGapclose && sender.IsValidTarget(Spells.W.Range) && Spells.W.IsReady() && !sender.IsUnderEnemyturret())
                 Spells.W.Cast(sender);
+            }
         }
 
-        private static void OnInterruptableSpell(Obj_AI_Base sender, Interrupter.InterruptableSpellEventArgs e)
+        public static void OnInterruptableSpell(Obj_AI_Base sender, Interrupter.InterruptableSpellEventArgs e)
         {
             if (Return.UseWInterrupt && sender.IsValidTarget(Spells.W.Range) && Spells.W.IsReady())
+            {
                 Spells.W.Cast(sender);
+            }
         }
 
-        private static void OnDraw(EventArgs args)
+        public static void OnDraw(EventArgs args)
         {
-            if (Return.DrawQWERange && !Player.Instance.IsDead)
+            if (Player.Instance.IsDead || Shop.IsOpen || MainMenu.IsOpen) return;
+            if (Return.DrawQweRange)
+            {
                 Circle.Draw(Color.Orange, Spells.Q.Range, 1, Player.Instance.Position);
+            }
         }
     }
 }

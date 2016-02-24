@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
+using _300_Pantheon.Assistants;
 
 namespace _300_Pantheon.Modes
 {
@@ -14,26 +14,29 @@ namespace _300_Pantheon.Modes
 
         public static void Execute()
         {
-            var Creeps = EntityManager.MinionsAndMonsters.GetJungleMonsters(Player.Instance.ServerPosition, 600).OrderByDescending(a => a.MaxHealth).FirstOrDefault();
+            var creeps =
+                EntityManager.MinionsAndMonsters.GetJungleMonsters(Player.Instance.ServerPosition, 600)
+                    .OrderByDescending(a => a.MaxHealth)
+                    .FirstOrDefault();
 
-            if (Creeps != null)
+            if (creeps != null)
             {
                 if (Spells.Q.IsReady() && Return.UseQJungle)
                 {
-                    if (Creeps.IsValidTarget(Spells.Q.Range))
-                        Spells.Q.Cast(Creeps);
+                    if (creeps.IsValidTarget(Spells.Q.Range))
+                        Spells.Q.Cast(creeps);
                 }
 
                 if (Spells.W.IsReady() && Return.UseWJungle)
                 {
-                    if (Creeps.IsValidTarget(Spells.W.Range))
-                        Spells.W.Cast(Creeps);
+                    if (creeps.IsValidTarget(Spells.W.Range))
+                        Spells.W.Cast(creeps);
                 }
 
                 if (Spells.E.IsReady() && Return.UseEJungle)
                 {
-                    if (Creeps.IsValidTarget(Spells.E.Range))
-                        Spells.E.Cast(Creeps.ServerPosition);
+                    if (creeps.IsValidTarget(Spells.E.Range))
+                        Spells.E.Cast(creeps.ServerPosition);
                 }
             }
         }

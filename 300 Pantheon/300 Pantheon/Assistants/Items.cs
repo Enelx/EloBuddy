@@ -1,28 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
 
-namespace _300_Pantheon
+namespace _300_Pantheon.Assistants
 {
     public static class Items
     {
         // Items
-        public static Item bilge = new Item(ItemId.Bilgewater_Cutlass, 550);
+        public static Item Bilge = new Item(ItemId.Bilgewater_Cutlass, 550);
         public static Item Botrk = new Item(ItemId.Blade_of_the_Ruined_King, 550);
         public static Item Hextech = new Item(ItemId.Hextech_Gunblade, 700);
         public static Item Tiamat = new Item(ItemId.Tiamat_Melee_Only, 400);
         public static Item Hydra = new Item(ItemId.Ravenous_Hydra_Melee_Only, 400);
-        public static Item Titanic = new Item(ItemId.Titanic_Hydra, (float)Player.Instance.AttackRange);
-        public static Item Youmuus = new Item(ItemId.Youmuus_Ghostblade, (float)(Player.Instance.AttackRange + Player.Instance.BoundingRadius + 300));
+        public static Item Titanic = new Item(ItemId.Titanic_Hydra, Player.Instance.AttackRange);
+
+        public static Item Youmuus = new Item(ItemId.Youmuus_Ghostblade,
+            Player.Instance.AttackRange + Player.Instance.BoundingRadius + 300);
 
         public static List<Item> ItemList = new List<Item>
         {
-            bilge,
+            Bilge,
             Botrk,
             Hextech,
             Titanic,
@@ -32,7 +30,23 @@ namespace _300_Pantheon
         public static void CastItems(AIHeroClient target)
         {
             foreach (var item in ItemList.Where(i => i.IsReady() && target.IsValidTarget(i.Range)))
+            {
                 item.Cast(target);
+            }
+        }
+
+        public static void Useitems(AttackableUnit target, float range)
+        {
+            if (target == null || !target.IsValidTarget(range)) return;
+
+            if (Tiamat.IsOwned() && Tiamat.IsReady())
+            {
+                Tiamat.Cast();
+            }
+            else if (Hydra.IsOwned() && Hydra.IsReady())
+            {
+                Hydra.Cast();
+            }
         }
     }
 }

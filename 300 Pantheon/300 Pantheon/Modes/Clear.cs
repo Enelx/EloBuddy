@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
+using _300_Pantheon.Assistants;
 
 namespace _300_Pantheon.Modes
 {
@@ -16,7 +16,9 @@ namespace _300_Pantheon.Modes
         {
             if (Player.Instance.ManaPercent < Return.ClearManaMin) return;
 
-            var minions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.Q.Range).OrderByDescending(a => a.MaxHealth).FirstOrDefault();
+            var minions =
+                EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy,
+                    Player.Instance.ServerPosition, Spells.Q.Range).OrderByDescending(a => a.MaxHealth).FirstOrDefault();
 
             if (minions != null)
             {

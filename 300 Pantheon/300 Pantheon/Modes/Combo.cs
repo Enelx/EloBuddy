@@ -1,7 +1,6 @@
-﻿using System.Linq;
-using EloBuddy;
+﻿using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
+using _300_Pantheon.Assistants;
 
 namespace _300_Pantheon.Modes
 {
@@ -25,7 +24,7 @@ namespace _300_Pantheon.Modes
                     Spells.Q.Cast(t);
                 else if (Return.UseWCombo && Spells.W.IsReady())
                     Spells.W.Cast(t);
-                else if(Return.UseECombo && Spells.E.IsReady())
+                else if (Return.UseECombo && Spells.E.IsReady())
                 {
                     Spells.E.Cast(t.ServerPosition);
                 }
