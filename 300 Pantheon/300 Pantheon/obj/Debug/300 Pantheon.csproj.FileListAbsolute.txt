@@ -1,0 +1,11 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\bin\Debug\300 Pantheon.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\bin\Debug\300 Pantheon.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\bin\Debug\300 Pantheon.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\bin\Debug\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\bin\Debug\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\obj\Debug\300 Pantheon.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\obj\Debug\300 Pantheon.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\obj\Debug\300 Pantheon.csprojResolveAssemblyReference.cache
