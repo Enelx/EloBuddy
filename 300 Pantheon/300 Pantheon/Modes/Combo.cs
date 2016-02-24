@@ -23,12 +23,12 @@ namespace _300_Pantheon.Modes
 
                 if (Return.UseQCombo && Spells.Q.IsReady())
                     Spells.Q.Cast(t);
-
-                if (Return.UseWCombo && Spells.W.IsReady())
+                else if (Return.UseWCombo && Spells.W.IsReady())
                     Spells.W.Cast(t);
-
-                if (Return.UseECombo && Spells.E.IsReady())
+                else if(Return.UseECombo && Spells.E.IsReady())
+                {
                     Spells.E.Cast(t.ServerPosition);
+                }
             }
         }
     }

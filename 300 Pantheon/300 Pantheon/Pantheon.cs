@@ -30,11 +30,32 @@ namespace _300_Pantheon
 
             //  Events
             Game.OnUpdate += OnUpdate;
+            Obj_AI_Base.OnProcessSpellCast += OnProcessSpellCast;
+            Obj_AI_Base.OnBuffLose += OnBuffLose;
             Orbwalker.OnPostAttack += OnPostAttack;
             Interrupter.OnInterruptableSpell += OnInterruptableSpell;
             Gapcloser.OnGapcloser += OnGapcloser;
             Drawing.OnDraw += OnDraw;
         }
+
+        private static void OnProcessSpellCast(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
+        {
+            if (sender.IsMe && args.SData.Name == Spells.E.Name )
+            {
+                Orbwalker.DisableAttacking = true;
+                Orbwalker.DisableMovement = true;
+            }
+        }
+
+        private static void OnBuffLose(Obj_AI_Base sender, Obj_AI_BaseBuffLoseEventArgs args)
+        {
+            if (sender.IsMe && args.Buff.Name == "pantheonesound")
+            {
+                Orbwalker.DisableAttacking = false;
+                Orbwalker.DisableMovement = false;
+            }
+        }
+
         private static void OnUpdate(EventArgs args)
         {
             if (Return.UseQKs)
