@@ -9,23 +9,21 @@ namespace _300_Pantheon.Modes
     {
         public static bool ShouldBeExecuted()
         {
-            return ModeController.OrbLastHit;
+            return Return.Activemode(Orbwalker.ActiveModes.LastHit);
         }
 
         public static void Execute()
         {
-            var qMinions =
-                EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy,
-                    Player.Instance.ServerPosition, Spells.Q.Range)
-                    .OrderByDescending(a => a.MaxHealth)
-                    .FirstOrDefault(
-                        a =>
-                            a.IsValidTarget(Spells.Q.Range) && a.Health < Player.Instance.GetSpellDamage(a, SpellSlot.Q));
+            var minion =
+                Logic.Minions(EntityManager.UnitTeam.Enemy, Spells.Q.Range, Player.Instance.ServerPosition)
+                    .FirstOrDefault();
 
-            if (Spells.Q.IsReady() && Return.UseQLast)
+            var isKillable = Logic.IsKillableMinion(minion, Spells.Q.Range, SpellSlot.Q);
+
+            if (minion != null && !Player.Instance.IsInAutoAttackRange(minion))
             {
-                if (qMinions != null && !Player.Instance.IsInAutoAttackRange(qMinions))
-                    Spells.Q.Cast(qMinions);
+                if (Return.UseQLast && Spells.Q.IsReady() && isKillable)
+                    Spells.Q.Cast(minion);
             }
         }
     }

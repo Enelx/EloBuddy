@@ -9,3 +9,14 @@ C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\obj\Release\300 Pantheon.csprojResolveAssemblyReference.cache
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\obj\Release\300 Pantheon.exe
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\300 Pantheon\300 Pantheon\obj\Release\300 Pantheon.pdb
+C:\Users\Leander\Documents\GitHub\EloBuddy\300 Pantheon\300 Pantheon\bin\Release\300 Pantheon.exe.config
+C:\Users\Leander\Documents\GitHub\EloBuddy\300 Pantheon\300 Pantheon\bin\Release\300 Pantheon.exe
+C:\Users\Leander\Documents\GitHub\EloBuddy\300 Pantheon\300 Pantheon\bin\Release\300 Pantheon.pdb
+C:\Users\Leander\Documents\GitHub\EloBuddy\300 Pantheon\300 Pantheon\bin\Release\EloBuddy.dll
+C:\Users\Leander\Documents\GitHub\EloBuddy\300 Pantheon\300 Pantheon\bin\Release\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\GitHub\EloBuddy\300 Pantheon\300 Pantheon\bin\Release\SharpDX.dll
+C:\Users\Leander\Documents\GitHub\EloBuddy\300 Pantheon\300 Pantheon\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\GitHub\EloBuddy\300 Pantheon\300 Pantheon\bin\Release\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\GitHub\EloBuddy\300 Pantheon\300 Pantheon\obj\Release\300 Pantheon.csprojResolveAssemblyReference.cache
+C:\Users\Leander\Documents\GitHub\EloBuddy\300 Pantheon\300 Pantheon\obj\Release\300 Pantheon.exe
+C:\Users\Leander\Documents\GitHub\EloBuddy\300 Pantheon\300 Pantheon\obj\Release\300 Pantheon.pdb

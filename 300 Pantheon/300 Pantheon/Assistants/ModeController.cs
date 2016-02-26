@@ -12,63 +12,35 @@ namespace _300_Pantheon.Assistants
             Game.OnTick += OnTick;
         }
 
-        // Return Orbwalker Modes
-        public static bool OrbCombo
-        {
-            get { return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo); }
-        }
-
-        public static bool OrbHarass
-        {
-            get { return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass); }
-        }
-
-        public static bool OrbLaneClear
-        {
-            get { return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear); }
-        }
-
-        public static bool OrbJungleClear
-        {
-            get { return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear); }
-        }
-
-        public static bool OrbLastHit
-        {
-            get { return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit); }
-        }
-
         private static void OnTick(EventArgs args)
         {
-            if (OrbCombo)
+            if (Return.Activemode(Orbwalker.ActiveModes.Combo))
             {
                 Combo.Execute();
             }
 
-            else if (OrbHarass || Return.HarassToggle)
+            if (Return.Activemode(Orbwalker.ActiveModes.Harass) || Return.HarassToggle)
             {
                 Harass.Execute();
             }
 
-            else if (OrbLaneClear)
+            if (Return.Activemode(Orbwalker.ActiveModes.LaneClear))
             {
                 Clear.Execute();
             }
 
-            else if (OrbJungleClear)
+            if (Return.Activemode(Orbwalker.ActiveModes.JungleClear))
             {
                 Jungle.Execute();
             }
 
-            else if (OrbLastHit)
+            if (Return.Activemode(Orbwalker.ActiveModes.LastHit))
             {
                 Lasthit.Execute();
             }
 
             PermaActive.Execute();
-
         }
-
 
         public static void Initialize()
         {

@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using EloBuddy;
-using EloBuddy.SDK;
 using _300_Pantheon.Assistants;
 
 namespace _300_Pantheon.Modes
@@ -16,11 +15,9 @@ namespace _300_Pantheon.Modes
         {
             if (Return.UseQKs && Spells.Q.IsReady())
             {
-                var target =
-                    EntityManager.Heroes.Enemies.FirstOrDefault(
-                        x =>
-                            x.IsValidTarget(Spells.Q.Range) && !x.HasBuffOfType(BuffType.Invulnerability) &&
-                            x.TotalShieldHealth() + 5 <= Player.Instance.GetSpellDamage(x, SpellSlot.Q));
+                var target = Logic.CloseEnemies(Spells.Q.Range, Player.Instance.ServerPosition).FirstOrDefault();
+
+                if (Logic.IsKillableTarget(target, Spells.Q.Range, SpellSlot.Q))
                 {
                     Spells.Q.Cast(target);
                 }
@@ -28,15 +25,13 @@ namespace _300_Pantheon.Modes
 
             if (Return.UseWKs && Spells.W.IsReady())
             {
-                var target =
-                    EntityManager.Heroes.Enemies.FirstOrDefault(
-                        x => x.IsValidTarget(Spells.W.Range) && !x.HasBuffOfType(BuffType.Invulnerability) &&
-                             x.TotalShield() <= Player.Instance.GetSpellDamage(x, SpellSlot.W));
+                var target = Logic.CloseEnemies(Spells.W.Range, Player.Instance.ServerPosition).FirstOrDefault();
+
+                if (Logic.IsKillableTarget(target, Spells.W.Range, SpellSlot.W))
                 {
                     Spells.W.Cast(target);
                 }
             }
-
         }
     }
 }

@@ -34,19 +34,5 @@ namespace _300_Pantheon.Assistants
                 item.Cast(target);
             }
         }
-
-        public static void Useitems(AttackableUnit target, float range)
-        {
-            if (target == null || !target.IsValidTarget(range)) return;
-
-            if (Tiamat.IsOwned() && Tiamat.IsReady())
-            {
-                Tiamat.Cast();
-            }
-            else if (Hydra.IsOwned() && Hydra.IsReady())
-            {
-                Hydra.Cast();
-            }
-        }
     }
 }

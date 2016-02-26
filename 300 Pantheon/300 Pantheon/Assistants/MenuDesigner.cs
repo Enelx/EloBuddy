@@ -16,7 +16,7 @@ namespace _300_Pantheon.Assistants
             PantheonUi.AddGroupLabel("THIS IS SCRIPTED !!!");
             PantheonUi.AddSeparator();
             PantheonUi.AddLabel("Developer    :   Enelx");
-            PantheonUi.AddLabel("Version          :   1.0.1.1");
+            PantheonUi.AddLabel("Version          :   2.0.0.0");
 
             // 300 Pantheon :: Combo Menu
             ComboUi = PantheonUi.AddSubMenu("Combo");

@@ -1,10 +1,23 @@
-﻿using EloBuddy.SDK.Menu;
+﻿using EloBuddy.SDK;
+using EloBuddy.SDK.Menu;
 using EloBuddy.SDK.Menu.Values;
 
 namespace _300_Pantheon.Assistants
 {
     public static class Return
     {
+        /// <summary>
+        ///     This function will make the life easy just checking the active mode instead of create 1000 bools
+        /// </summary>
+        /// <param name="id">Flag id of the orbwalker</param>
+        /// <returns></returns>
+        public static bool Activemode(Orbwalker.ActiveModes id)
+        {
+            return Orbwalker.ActiveModesFlags.HasFlag(id);
+        }
+
+        #region Combo
+
         // Combo Q
         public static bool UseQCombo
         {
@@ -23,6 +36,10 @@ namespace _300_Pantheon.Assistants
             get { return GetCheckbox(MenuDesigner.ComboUi, "ComboE"); }
         }
 
+        #endregion
+
+        #region Harass
+
         // Harass Q
         public static bool UseQHarass
         {
@@ -40,6 +57,10 @@ namespace _300_Pantheon.Assistants
         {
             get { return GetSlider(MenuDesigner.HarassUi, "HarassMana"); }
         }
+
+        #endregion
+
+        #region Clear
 
         // Lasthit Q
         public static bool UseQLast
@@ -89,6 +110,10 @@ namespace _300_Pantheon.Assistants
             get { return GetCheckbox(MenuDesigner.ClearUi, "JungleE"); }
         }
 
+        #endregion
+
+        #region Killsteal
+
         // KS Q
         public static bool UseQKs
         {
@@ -100,6 +125,10 @@ namespace _300_Pantheon.Assistants
         {
             get { return GetCheckbox(MenuDesigner.KsUi, "KsW"); }
         }
+
+        #endregion
+
+        #region Misc
 
         // Misc W Interrupt
         public static bool UseWInterrupt
@@ -125,6 +154,10 @@ namespace _300_Pantheon.Assistants
             get { return GetCheckbox(MenuDesigner.MiscUi, "DrawSpells"); }
         }
 
+        #endregion
+
+        #region Menu Values
+
         // Return Checkbox Value
         public static bool GetCheckbox(Menu menu, string menuvalue)
         {
@@ -142,5 +175,7 @@ namespace _300_Pantheon.Assistants
         {
             return menu[menuvalue].Cast<Slider>().CurrentValue;
         }
+
+        #endregion
     }
 }

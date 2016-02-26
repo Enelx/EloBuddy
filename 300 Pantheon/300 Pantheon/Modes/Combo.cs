@@ -1,4 +1,5 @@
-﻿using EloBuddy;
+﻿using System.Linq;
+using EloBuddy;
 using EloBuddy.SDK;
 using _300_Pantheon.Assistants;
 
@@ -8,26 +9,27 @@ namespace _300_Pantheon.Modes
     {
         public static bool ShouldBeExecuted()
         {
-            return ModeController.OrbCombo;
+            return Return.Activemode(Orbwalker.ActiveModes.Combo);
         }
 
         public static void Execute()
         {
-            var t = TargetSelector.GetTarget(Spells.Q.Range, DamageType.Physical);
+            var target = Logic.CloseEnemies(Spells.Q.Range, Player.Instance.ServerPosition).FirstOrDefault();
 
-            if (t != null)
+            if (target == null || !target.IsValidTarget(Spells.Q.Range)) return;
+
+            if (Return.UseAgressiveItems)
+                Items.CastItems(target);
+
+            if (Return.UseQCombo && Spells.Q.IsReady())
+                Spells.Q.Cast(target);
+            else if (Return.UseWCombo && Spells.W.IsReady())
+                Spells.W.Cast(target);
+            else if (Return.UseECombo && Spells.E.IsReady())
             {
-                if (Return.UseAgressiveItems)
-                    Items.CastItems(t);
+                var pred = Spells.E.GetPrediction(target);
 
-                if (Return.UseQCombo && Spells.Q.IsReady())
-                    Spells.Q.Cast(t);
-                else if (Return.UseWCombo && Spells.W.IsReady())
-                    Spells.W.Cast(t);
-                else if (Return.UseECombo && Spells.E.IsReady())
-                {
-                    Spells.E.Cast(t.ServerPosition);
-                }
+                Spells.E.Cast(pred.CastPosition);
             }
         }
     }

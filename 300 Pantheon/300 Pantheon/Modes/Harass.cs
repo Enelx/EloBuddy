@@ -1,4 +1,5 @@
-﻿using EloBuddy;
+﻿using System.Linq;
+using EloBuddy;
 using EloBuddy.SDK;
 using _300_Pantheon.Assistants;
 
@@ -8,19 +9,19 @@ namespace _300_Pantheon.Modes
     {
         public static bool ShouldBeExecuted()
         {
-            return ModeController.OrbHarass;
+            return Return.Activemode(Orbwalker.ActiveModes.Harass);
         }
 
         public static void Execute()
         {
             if (Player.Instance.ManaPercent < Return.HarassManaMin) return;
 
-            var t = TargetSelector.GetTarget(Spells.Q.Range, DamageType.Physical);
+            var target = Logic.CloseEnemies(Spells.Q.Range, Player.Instance.ServerPosition).FirstOrDefault();
 
-            if (t != null)
+            if (target != null & target.IsValidTarget(Spells.Q.Range))
             {
                 if (Return.UseQHarass && Spells.Q.IsReady())
-                    Spells.Q.Cast(t);
+                    Spells.Q.Cast(target);
             }
         }
     }

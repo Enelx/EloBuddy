@@ -9,35 +9,21 @@ namespace _300_Pantheon.Modes
     {
         public static bool ShouldBeExecuted()
         {
-            return ModeController.OrbJungleClear;
+            return Return.Activemode(Orbwalker.ActiveModes.JungleClear);
         }
 
         public static void Execute()
         {
-            var creeps =
-                EntityManager.MinionsAndMonsters.GetJungleMonsters(Player.Instance.ServerPosition, 600)
-                    .OrderByDescending(a => a.MaxHealth)
-                    .FirstOrDefault();
+            var monster = Logic.Monsters(Spells.Q.Range, Player.Instance.ServerPosition).FirstOrDefault();
 
-            if (creeps != null)
+            if (monster != null && monster.IsValidTarget(Spells.Q.Range))
             {
-                if (Spells.Q.IsReady() && Return.UseQJungle)
-                {
-                    if (creeps.IsValidTarget(Spells.Q.Range))
-                        Spells.Q.Cast(creeps);
-                }
-
-                if (Spells.W.IsReady() && Return.UseWJungle)
-                {
-                    if (creeps.IsValidTarget(Spells.W.Range))
-                        Spells.W.Cast(creeps);
-                }
-
-                if (Spells.E.IsReady() && Return.UseEJungle)
-                {
-                    if (creeps.IsValidTarget(Spells.E.Range))
-                        Spells.E.Cast(creeps.ServerPosition);
-                }
+                if (Return.UseQJungle && Spells.Q.IsReady())
+                    Spells.Q.Cast(monster);
+                else if (Return.UseWJungle && Spells.W.IsReady())
+                    Spells.W.Cast(monster);
+                else if (Return.UseEJungle && Spells.E.IsReady())
+                    Spells.E.Cast(monster);
             }
         }
     }

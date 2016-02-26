@@ -9,27 +9,24 @@ namespace _300_Pantheon.Modes
     {
         public static bool ShouldBeExecuted()
         {
-            return ModeController.OrbLaneClear;
+            return Return.Activemode(Orbwalker.ActiveModes.LaneClear);
         }
 
         public static void Execute()
         {
             if (Player.Instance.ManaPercent < Return.ClearManaMin) return;
 
-            var minions =
-                EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy,
-                    Player.Instance.ServerPosition, Spells.Q.Range).OrderByDescending(a => a.MaxHealth).FirstOrDefault();
+            var minion = Logic.Minions(EntityManager.UnitTeam.Enemy, Spells.Q.Range, Player.Instance.ServerPosition)
+                .FirstOrDefault();
 
-            if (minions != null)
+            if (minion != null && minion.IsValidTarget(Spells.Q.Range))
             {
-                if (Return.UseQJungle && Spells.Q.IsReady())
-                    Spells.Q.Cast(minions);
-
-                if (Return.UseWJungle && Spells.W.IsReady())
-                    Spells.W.Cast(minions);
-
-                if (Return.UseEJungle && Spells.E.IsReady())
-                    Spells.E.Cast(minions.ServerPosition);
+                if (Return.UseQClear && Spells.Q.IsReady())
+                    Spells.Q.Cast(minion);
+                else if (Return.UseEClear && Spells.E.IsReady())
+                    Spells.E.Cast(minion);
+                else if (Return.UseWClear && Spells.W.IsReady())
+                    Spells.W.Cast(minion);
             }
         }
     }
