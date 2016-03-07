@@ -11,7 +11,7 @@ namespace Broken_Blade_Riven.Assistants
         public static Spell.Active W = new Spell.Active(SpellSlot.W, 125);
         public static Spell.Skillshot E = new Spell.Skillshot(SpellSlot.E, 325, SkillShotType.Linear);
         public static Spell.Active R1 = new Spell.Active(SpellSlot.R);
-        public static Spell.Skillshot R2 = new Spell.Skillshot(SpellSlot.R, 900, SkillShotType.Cone, 250, 1600, 225);
+        public static Spell.Skillshot R2 = new Spell.Skillshot(SpellSlot.R, 900, SkillShotType.Cone, 250, 1600, 20);
 
         public static Spell.Skillshot Flash;
 

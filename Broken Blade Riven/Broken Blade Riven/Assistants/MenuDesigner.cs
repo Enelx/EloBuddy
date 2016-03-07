@@ -16,7 +16,7 @@ namespace Broken_Blade_Riven.Assistants
             RivenUi.AddGroupLabel("What is broken can be reforged!");
             RivenUi.AddSeparator();
             RivenUi.AddLabel("Developer    :   Enelx");
-            RivenUi.AddLabel("Version          :   1.0.0.0");
+            RivenUi.AddLabel("Version          :   1.0.0.1");
 
             ComboUi = RivenUi.AddSubMenu("Combo");
             ComboUi.AddGroupLabel("Combo :: Settings");
