@@ -1,7 +1,5 @@
-﻿using System.Linq;
-using EloBuddy;
+﻿using Black_Swan_Akali.Assistants;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
 
 namespace Black_Swan_Akali.Modes
 {
@@ -9,13 +7,15 @@ namespace Black_Swan_Akali.Modes
     {
         public static bool ShouldBeExecuted()
         {
-            return ModeController.OrbFlee;
+            return Return.Activemode(Orbwalker.ActiveModes.Flee);
         }
 
         public static void Execute()
         {
-            if (Spells.W.IsReady() && Return.UseWFlee)
+            if (Return.UseWFlee && Spells.W.IsReady())
+            {
                 Spells.W.Cast();
+            }
         }
     }
 }

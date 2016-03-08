@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1ED929C3-C9BC-4D2B-BA7E-B5D867A853B9}</ProjectGuid>
+    <ProjectGuid>{DAA5A827-5FDC-41A4-A458-5DF225E0A5E4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Black_Swan_Akali</RootNamespace>
@@ -35,12 +35,19 @@
     <Reference Include="EloBuddy">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\EloBuddy\System\EloBuddy.dll</HintPath>
     </Reference>
+    <Reference Include="EloBuddy.Sandbox">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\EloBuddy\System\EloBuddy.Sandbox.dll</HintPath>
+    </Reference>
     <Reference Include="EloBuddy.SDK">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\EloBuddy\System\EloBuddy.SDK.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\EloBuddy\System\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D9, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\EloBuddy\System\SharpDX.Direct3D9.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Akali.cs" />
     <Compile Include="Assistants\Items.cs" />
+    <Compile Include="Assistants\Logic.cs" />
     <Compile Include="Assistants\MenuDesigner.cs" />
     <Compile Include="Assistants\ModeController.cs" />
     <Compile Include="Assistants\Return.cs" />
@@ -63,6 +71,7 @@
     <Compile Include="Modes\Harass.cs" />
     <Compile Include="Modes\Jungle.cs" />
     <Compile Include="Modes\Lasthit.cs" />
+    <Compile Include="Modes\PermaActive.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

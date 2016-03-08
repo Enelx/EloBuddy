@@ -2,9 +2,10 @@ C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\bin\Debug\Black Swan Akali.exe
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\bin\Debug\Black Swan Akali.pdb
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\bin\Debug\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\bin\Debug\EloBuddy.Sandbox.dll
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\bin\Debug\EloBuddy.SDK.dll
-C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\bin\Debug\SharpDX.dll
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\bin\Debug\SharpDX.dll
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\obj\Debug\Black Swan Akali.exe
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Black Swan Akali\Black Swan Akali\obj\Debug\Black Swan Akali.pdb

@@ -1,7 +1,7 @@
 ﻿using System.Linq;
+using Black_Swan_Akali.Assistants;
 using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
 
 namespace Black_Swan_Akali.Modes
 {
@@ -9,29 +9,27 @@ namespace Black_Swan_Akali.Modes
     {
         public static bool ShouldBeExecuted()
         {
-            return ModeController.OrbLaneClear;
+            return Return.Activemode(Orbwalker.ActiveModes.LaneClear);
         }
 
         public static void Execute()
         {
             if (Player.Instance.ManaPercent < Return.ClearEnergyMin) return;
 
-            var Count = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.E.Range).Count();
-            var EMinions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.E.Range);
-            var QMinions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.Q.Range).OrderByDescending(a => a.MaxHealth).FirstOrDefault(a => a.IsValidTarget(Spells.Q.Range) && a.Health < Player.Instance.GetSpellDamage(a, SpellSlot.Q));
+            var minion =
+                Logic.Minions(EntityManager.UnitTeam.Enemy, Spells.Q.Range, Player.Instance.ServerPosition)
+                    .FirstOrDefault();
 
-            if (Count < Return.ClearMinionMin) return;
+            if (minion == null || !minion.IsValidTarget(Spells.Q.Range)) return;
 
-            if (Spells.Q.IsReady() && Return.UseQClear)
+            if (Return.UseQClear && Spells.Q.IsReady())
             {
-                if (QMinions != null)
-                    Spells.Q.Cast(QMinions);
+                Spells.Q.Cast(minion);
             }
 
-            if (Spells.E.IsReady() && Return.UseEClear)
+            if (Return.UseEClear && Spells.E.IsReady() && minion.IsValidTarget(Spells.E.Range))
             {
-                if (EMinions.Any(x => x.IsValidTarget(Spells.E.Range) && x.Health < 0.90 * Player.Instance.GetSpellDamage(x, SpellSlot.E)))
-                    Spells.E.Cast();
+                Spells.E.Cast();
             }
         }
     }

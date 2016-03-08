@@ -1,7 +1,7 @@
 ﻿using System.Linq;
+using Black_Swan_Akali.Assistants;
 using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
 
 namespace Black_Swan_Akali.Modes
 {
@@ -9,27 +9,33 @@ namespace Black_Swan_Akali.Modes
     {
         public static bool ShouldBeExecuted()
         {
-            return ModeController.OrbJungleClear;
+            return Return.Activemode(Orbwalker.ActiveModes.JungleClear);
         }
 
         public static void Execute()
         {
-            if (Player.Instance.ManaPercent < Return.JungleEnergyMin) return;
+            var monster =
+                Logic.Monsters(Spells.Q.Range, Player.Instance.ServerPosition)
+                    .FirstOrDefault();
 
-            var Creeps = EntityManager.MinionsAndMonsters.GetJungleMonsters(Player.Instance.ServerPosition, Spells.Q.Range).OrderByDescending(a => a.MaxHealth).FirstOrDefault();
+            if (monster == null || !monster.IsValidTarget(Spells.Q.Range)) return;
 
-            if (Spells.Q.IsReady() && Return.UseQJungle)
+            if (Return.UseQJungle && Spells.Q.IsReady())
             {
-                if (Creeps.IsValidTarget(Spells.Q.Range))
-                    Spells.Q.Cast(Creeps);
+                Spells.Q.Cast(monster);
             }
-
-            if (Spells.E.IsReady() && Return.UseEJungle)
+            else if (Return.UseEJungle && Spells.E.IsReady() && monster.IsValidTarget(Spells.E.Range))
             {
-                if (Creeps.IsValidTarget(Spells.E.Range))
-                    Spells.E.Cast();
+                Spells.E.Cast();
+            }
+            else if (Items.Tiamat.IsReady() && monster.IsValidTarget(Items.Tiamat.Range))
+            {
+                Items.Tiamat.Cast();
+            }
+            else if (Items.Hydra.IsReady() && monster.IsValidTarget(Items.Hydra.Range))
+            {
+                Items.Hydra.Cast();
             }
         }
     }
-
 }

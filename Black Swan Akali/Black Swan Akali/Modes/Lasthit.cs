@@ -1,7 +1,7 @@
 ﻿using System.Linq;
+using Black_Swan_Akali.Assistants;
 using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
 
 namespace Black_Swan_Akali.Modes
 {
@@ -9,24 +9,36 @@ namespace Black_Swan_Akali.Modes
     {
         public static bool ShouldBeExecuted()
         {
-            return ModeController.OrbLastHit;
+            return Return.Activemode(Orbwalker.ActiveModes.LastHit);
         }
 
         public static void Execute()
         {
-            var QMinions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.Q.Range).OrderByDescending(a => a.MaxHealth).FirstOrDefault(a => a.IsValidTarget(Spells.Q.Range) && a.Health < Player.Instance.GetSpellDamage(a, SpellSlot.Q));
-            var EMinions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.E.Range).OrderByDescending(a => a.MaxHealth).FirstOrDefault(a => a.IsValidTarget(Spells.E.Range) && a.Health < Player.Instance.GetSpellDamage(a, SpellSlot.E));
+            var qminion =
+                Logic.Minions(EntityManager.UnitTeam.Enemy, Spells.Q.Range, Player.Instance.ServerPosition)
+                    .FirstOrDefault();
 
-            if (Spells.Q.IsReady() && Return.UseQLast)
+            var eminion =
+                Logic.Minions(EntityManager.UnitTeam.Enemy, Spells.E.Range, Player.Instance.ServerPosition)
+                    .FirstOrDefault();
+
+            var qiskillable = Logic.IsKillableMinion(qminion, Spells.Q.Range, SpellSlot.Q);
+            var eiskillable = Logic.IsKillableMinion(eminion, Spells.E.Range, SpellSlot.E);
+
+            if (qminion != null && !Player.Instance.IsInAutoAttackRange(qminion))
             {
-                if (QMinions != null)
-                    Spells.Q.Cast(QMinions);
+                if (Return.UseQLast && Spells.Q.IsReady() && qiskillable)
+                {
+                    Spells.Q.Cast(qminion);
+                }
             }
 
-            if (Spells.E.IsReady() && Return.UseELast)
+            if (eminion != null)
             {
-                if (EMinions != null)
+                if (Return.UseELast && Spells.E.IsReady() && eiskillable)
+                {
                     Spells.E.Cast();
+                }
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿using System.Linq;
+using Black_Swan_Akali.Assistants;
 using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
 
 namespace Black_Swan_Akali.Modes
 {
@@ -9,37 +9,39 @@ namespace Black_Swan_Akali.Modes
     {
         public static bool ShouldBeExecuted()
         {
-            return ModeController.OrbCombo;
+            return Return.Activemode(Orbwalker.ActiveModes.Combo);
         }
 
         public static void Execute()
         {
-            var t = TargetSelector.GetTarget(Spells.Q.Range, DamageType.Magical);
+            var target = Logic.CloseEnemies(Spells.Q.Range, Player.Instance.ServerPosition).FirstOrDefault();
 
-            if (t != null)
+            if (target == null || !target.IsValidTarget(Spells.Q.Range)) return;
+
+            if (Return.UseAgressiveItems)
             {
-                if (Return.UseAgressiveItems)
-                    Items.CastItems(t);
+                Items.CastItems(target);
             }
 
-            if (Spells.Q.IsReady() && Return.UseQCombo)
+            if (Return.UseWCombo && Spells.W.IsReady() && Player.Instance.CountEnemiesInRange(Spells.Q.Range) >= 2)
             {
-                if (t != null)
-                    Spells.Q.Cast(t);
+                Spells.W.Cast();
             }
 
-            if (Spells.R.IsReady() && Return.UseRCombo)
+            if (Return.UseQCombo && Spells.Q.IsReady())
             {
-                var Rt = TargetSelector.GetTarget(Spells.R.Range, DamageType.Magical);
-
-                if (Rt != null)
-                    Spells.R.Cast(Rt);
+                Spells.Q.Cast(target);
             }
-
-            if (Spells.W.IsReady() && Return.UseWCombo)
+            else if (Return.UseRCombo && Spells.R.IsReady())
             {
-                if (t != null && Player.Instance.CountEnemiesInRange(Spells.Q.Range) >= 2)
-                    Spells.W.Cast();
+                if (Player.Instance.Distance(target) >= Spells.E.Range)
+                {
+                    Spells.R.Cast(target);
+                }
+                else if (target.HealthPercent <= 25)
+                {
+                    Spells.R.Cast(target);
+                }
             }
         }
     }

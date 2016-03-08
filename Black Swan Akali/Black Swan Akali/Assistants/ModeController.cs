@@ -1,7 +1,9 @@
-﻿using EloBuddy;
+﻿using System;
+using Black_Swan_Akali.Modes;
+using EloBuddy;
 using EloBuddy.SDK;
 
-namespace Black_Swan_Akali
+namespace Black_Swan_Akali.Assistants
 {
     public static class ModeController
     {
@@ -10,76 +12,41 @@ namespace Black_Swan_Akali
             Game.OnTick += OnTick;
         }
 
-        private static void OnTick(System.EventArgs args)
+        private static void OnTick(EventArgs args)
         {
-            if (OrbCombo)
-                Modes.Combo.Execute();
-
-            if (OrbHarass)
-                Modes.Combo.Execute();
-
-            if (OrbLaneClear)
-                Modes.Clear.Execute();
-
-            if (OrbJungleClear)
-                Modes.Jungle.Execute();
-
-            if (OrbLastHit)
-                Modes.Lasthit.Execute();
-
-            if (OrbFlee)
-                Modes.Flee.Execute();
-        }
-
-        // Return Orbwalker Modes
-        public static bool OrbCombo
-        {
-            get
+            if (Return.Activemode(Orbwalker.ActiveModes.Combo))
             {
-                return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo);
+                Combo.Execute();
             }
-        }
 
-        public static bool OrbHarass
-        {
-            get
+            if (Return.Activemode(Orbwalker.ActiveModes.Harass))
             {
-                return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass);
+                Harass.Execute();
             }
-        }
 
-        public static bool OrbLaneClear
-        {
-            get
+            if (Return.Activemode(Orbwalker.ActiveModes.LaneClear))
             {
-                return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear);
+                Clear.Execute();
             }
-        }
 
-        public static bool OrbJungleClear
-        {
-            get
+            if (Return.Activemode(Orbwalker.ActiveModes.JungleClear))
             {
-                return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear);
+                Jungle.Execute();
             }
-        }
 
-        public static bool OrbLastHit
-        {
-            get
+            if (Return.Activemode(Orbwalker.ActiveModes.LastHit))
             {
-                return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit);
+                Lasthit.Execute();
             }
-        }
 
-        public static bool OrbFlee
-        {
-            get
+            if (Return.Activemode(Orbwalker.ActiveModes.Flee))
             {
-                return Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee);
+                Flee.Execute();
             }
-        }
 
+
+            PermaActive.Execute();
+        }
 
         public static void Initialize()
         {

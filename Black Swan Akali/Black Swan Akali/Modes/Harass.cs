@@ -1,7 +1,7 @@
 ﻿using System.Linq;
+using Black_Swan_Akali.Assistants;
 using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
 
 namespace Black_Swan_Akali.Modes
 {
@@ -9,17 +9,18 @@ namespace Black_Swan_Akali.Modes
     {
         public static bool ShouldBeExecuted()
         {
-            return ModeController.OrbHarass;
+            return Return.Activemode(Orbwalker.ActiveModes.Harass);
         }
 
         public static void Execute()
         {
-            var t = TargetSelector.GetTarget(Spells.Q.Range, DamageType.Magical);
+            var target = Logic.CloseEnemies(Spells.Q.Range, Player.Instance.ServerPosition).FirstOrDefault();
 
-            if (Spells.Q.IsReady() && Return.UseQHarass)
+            if (target == null || !target.IsValidTarget(Spells.Q.Range)) return;
+
+            if (Return.UseQHarass && Spells.Q.IsReady())
             {
-                if (t != null)
-                    Spells.Q.Cast(t);
+                Spells.Q.Cast(target);
             }
         }
     }

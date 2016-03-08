@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Black Swan Akali", "Black Swan Akali\Black Swan Akali.csproj", "{1ED929C3-C9BC-4D2B-BA7E-B5D867A853B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Black Swan Akali", "Black Swan Akali\Black Swan Akali.csproj", "{DAA5A827-5FDC-41A4-A458-5DF225E0A5E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1ED929C3-C9BC-4D2B-BA7E-B5D867A853B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1ED929C3-C9BC-4D2B-BA7E-B5D867A853B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1ED929C3-C9BC-4D2B-BA7E-B5D867A853B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1ED929C3-C9BC-4D2B-BA7E-B5D867A853B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAA5A827-5FDC-41A4-A458-5DF225E0A5E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA5A827-5FDC-41A4-A458-5DF225E0A5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA5A827-5FDC-41A4-A458-5DF225E0A5E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA5A827-5FDC-41A4-A458-5DF225E0A5E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
