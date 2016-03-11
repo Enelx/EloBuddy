@@ -1,0 +1,25 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Broken Blade Riven\Broken Blade Riven\bin\Debug\Broken Blade Riven.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Broken Blade Riven\Broken Blade Riven\bin\Debug\Broken Blade Riven.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Broken Blade Riven\Broken Blade Riven\bin\Debug\Broken Blade Riven.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Broken Blade Riven\Broken Blade Riven\bin\Debug\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Broken Blade Riven\Broken Blade Riven\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Broken Blade Riven\Broken Blade Riven\bin\Debug\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Broken Blade Riven\Broken Blade Riven\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Broken Blade Riven\Broken Blade Riven\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Broken Blade Riven\Broken Blade Riven\obj\Debug\Broken Blade Riven.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Broken Blade Riven\Broken Blade Riven\obj\Debug\Broken Blade Riven.pdb
+C:\Users\iRaxe\Desktop\Broken Blade Riven\Broken Blade Riven\bin\Debug\Broken Blade Riven.exe.config
+C:\Users\iRaxe\Desktop\Broken Blade Riven\Broken Blade Riven\obj\Debug\Broken Blade Riven.exe
+C:\Users\iRaxe\Desktop\Broken Blade Riven\Broken Blade Riven\obj\Debug\Broken Blade Riven.pdb
+C:\Users\Leander\Desktop\Broken Blade Riven\Broken Blade Riven\bin\Debug\Broken Blade Riven.exe.config
+C:\Users\Leander\Desktop\Broken Blade Riven\Broken Blade Riven\obj\Debug\Broken Blade Riven.exe
+C:\Users\Leander\Desktop\Broken Blade Riven\Broken Blade Riven\obj\Debug\Broken Blade Riven.pdb
+C:\Users\Leander\Desktop\Broken Blade Riven\Broken Blade Riven\bin\Debug\Broken Blade Riven.exe
+C:\Users\Leander\Desktop\Broken Blade Riven\Broken Blade Riven\bin\Debug\Broken Blade Riven.pdb
+C:\Users\Leander\Desktop\Broken Blade Riven\Broken Blade Riven\bin\Debug\EloBuddy.dll
+C:\Users\Leander\Desktop\Broken Blade Riven\Broken Blade Riven\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Leander\Desktop\Broken Blade Riven\Broken Blade Riven\bin\Debug\SharpDX.dll
+C:\Users\Leander\Desktop\Broken Blade Riven\Broken Blade Riven\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Leander\Desktop\Broken Blade Riven\Broken Blade Riven\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Leander\Desktop\Broken Blade Riven\Broken Blade Riven\obj\Debug\Broken Blade Riven.csprojResolveAssemblyReference.cache
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Broken Blade Riven\Broken Blade Riven\obj\Debug\Broken Blade Riven.csprojResolveAssemblyReference.cache
