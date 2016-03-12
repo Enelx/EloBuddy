@@ -14,7 +14,7 @@ namespace Black_Swan_Akali.Modes
 
         public static void Execute()
         {
-            var target = Logic.CloseEnemies(Spells.Q.Range, Player.Instance.ServerPosition).FirstOrDefault();
+            var target = TargetSelector.GetTarget(Spells.Q.Range, DamageType.Magical);
 
             if (target == null || !target.IsValidTarget(Spells.Q.Range)) return;
 

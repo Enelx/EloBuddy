@@ -14,34 +14,27 @@ namespace Black_Swan_Akali.Modes
 
         public static void Execute()
         {
-            var target = Logic.CloseEnemies(Spells.Q.Range, Player.Instance.ServerPosition).FirstOrDefault();
+            var target = TargetSelector.GetTarget(Spells.Q.Range, DamageType.Magical);
 
-            if (target == null || !target.IsValidTarget(Spells.Q.Range)) return;
+            if (target == null || !target.IsValidTarget()) return;
 
             if (Return.UseAgressiveItems)
             {
                 Items.CastItems(target);
             }
 
-            if (Return.UseWCombo && Spells.W.IsReady() && Player.Instance.CountEnemiesInRange(Spells.Q.Range) >= 2)
-            {
-                Spells.W.Cast();
-            }
-
             if (Return.UseQCombo && Spells.Q.IsReady())
             {
                 Spells.Q.Cast(target);
             }
-            else if (Return.UseRCombo && Spells.R.IsReady())
+            else if (Return.UseRCombo && Spells.R.IsReady() && !Player.Instance.IsInRange(target, Spells.E.Range))
             {
-                if (Player.Instance.Distance(target) >= Spells.E.Range)
-                {
-                    Spells.R.Cast(target);
-                }
-                else if (target.HealthPercent <= 25)
-                {
-                    Spells.R.Cast(target);
-                }
+                Spells.R.Cast(target);
+            }
+
+            if (Return.UseWCombo && Spells.W.IsReady() && Player.Instance.CountEnemiesInRange(Spells.Q.Range) >= 2)
+            {
+                Spells.W.Cast();
             }
         }
     }

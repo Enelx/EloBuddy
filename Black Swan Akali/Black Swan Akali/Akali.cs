@@ -32,11 +32,14 @@ namespace Black_Swan_Akali
 
         private static void OnPostAttack(AttackableUnit target, EventArgs args)
         {
-            if (!Return.Activemode(Orbwalker.ActiveModes.Combo)) return;
-
-            if (Spells.E.IsReady() && Return.UseECombo)
+            if (Return.Activemode(Orbwalker.ActiveModes.Combo) ||
+                Return.Activemode(Orbwalker.ActiveModes.Harass) ||
+                Return.Activemode(Orbwalker.ActiveModes.JungleClear))
             {
-                Spells.E.Cast();
+                if (Spells.E.IsReady() && Return.UseECombo)
+                {
+                    Spells.E.Cast();
+                }
             }
         }
 
