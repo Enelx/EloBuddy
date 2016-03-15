@@ -27,7 +27,8 @@ namespace Black_Swan_Akali.Modes
             {
                 Spells.Q.Cast(target);
             }
-            else if (Return.UseRCombo && Spells.R.IsReady() && !Player.Instance.IsInRange(target, Spells.E.Range))
+            
+            if (Return.UseRCombo && Spells.R.IsReady() && !Player.Instance.IsInRange(target, Spells.E.Range))
             {
                 Spells.R.Cast(target);
             }
