@@ -21,6 +21,16 @@ namespace Ex1L_Riven.Base
             get { return MenuDesigner.EmoteUi["EmoteSelect"].Cast<ComboBox>().SelectedText; }
         }
 
+        public static int Q1Q2Delay
+        {
+            get { return GetSlider(MenuDesigner.EmoteUi, "Q1Q2delay"); }
+        }
+
+        public static int Q3Delay
+        {
+            get { return GetSlider(MenuDesigner.EmoteUi, "Q3delay"); }
+        }
+
         #endregion
 
         #region Clear Menu

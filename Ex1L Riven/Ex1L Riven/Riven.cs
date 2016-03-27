@@ -118,7 +118,7 @@ namespace Ex1L_Riven
                                 {
                                     Logic.DoEmote();
                                     Logic.ResetAa();
-                                }, 30 - Game.Ping/1000);
+                                }, Variables.Q1Q2Delay - Game.Ping/1000);
                             }
                         }
                     }
@@ -132,7 +132,7 @@ namespace Ex1L_Riven
                                 {
                                     Logic.DoEmote();
                                     Logic.ResetAa();
-                                }, 40 - Game.Ping/1000);
+                                }, Variables.Q3Delay - Game.Ping/1000);
                             }
                         }
                     }
