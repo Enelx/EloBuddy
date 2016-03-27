@@ -25,8 +25,8 @@ namespace Ex1L_Riven.Base
             EmoteUi.Add("EmoteSelect", new ComboBox("Select emote", new[] {"Laugh", "Dance", "Joke", "Taunt"}));
             EmoteUi.AddSeparator();
             EmoteUi.AddGroupLabel("Advanced Settings, only for experienced users");
-            EmoteUi.Add("Q1Q2delay", new Slider("Select Q1 / Q2 delay", 200, 1, 300));
-            EmoteUi.Add("Q3delay", new Slider("Select Q3 delay", 210, 1, 300));
+            EmoteUi.Add("Q1Q2delay", new Slider("Select Q1 / Q2 delay", 290, 1, 300));
+            EmoteUi.Add("Q3delay", new Slider("Select Q3 delay", 390, 1, 400));
 
             ClearUi = RivenUi.AddSubMenu("Clear");
             ClearUi.AddGroupLabel("Jungleclear");
