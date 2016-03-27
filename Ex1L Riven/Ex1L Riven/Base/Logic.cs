@@ -82,6 +82,21 @@ namespace Ex1L_Riven.Base
             }
         }
 
+        public static void CastQss()
+        {
+            if (Player.Instance.CountEnemiesInRange(1000) > 0)
+            {
+                if (Items.Qss.IsReady())
+                {
+                    Items.Qss.Cast();
+                }
+                if (Items.Mercurial.IsReady())
+                {
+                    Items.Mercurial.Cast();
+                }
+            }
+        }
+
         public static void DoEmote()
         {
             switch (Variables.SelectedEmote)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
@@ -154,9 +155,64 @@ namespace Ex1L_Riven
 
         private static void OnBuffGain(Obj_AI_Base sender, Obj_AI_BaseBuffGainEventArgs args)
         {
-            if (sender.IsMe && args.Buff.Name == "RivenFengShuiEngine")
+            if (!sender.IsMe) return;
+
+            if (args.Buff.Name == "RivenFengShuiEngine")
             {
                 R1Activated = true;
+            }
+
+            if (Variables.UseItems && Items.Qss.IsOwned() || Items.Mercurial.IsOwned())
+            {
+                var type = args.Buff.Type;
+                var name = args.Buff.Name;
+
+                switch (type)
+                {
+                    case BuffType.Blind:
+                        Logic.CastQss();
+                        break;
+                    case BuffType.Charm:
+                        Logic.CastQss();
+                        break;
+                    case BuffType.Fear:
+                        Logic.CastQss();
+                        break;
+                    case BuffType.Polymorph:
+                        Logic.CastQss();
+                        break;
+                    case BuffType.Silence:
+                        Logic.CastQss();
+                        break;
+                    case BuffType.Snare:
+                        Logic.CastQss();
+                        break;
+                    case BuffType.Stun:
+                        Logic.CastQss();
+                        break;
+                    case BuffType.Suppression:
+                        Logic.CastQss();
+                        break;
+                    case BuffType.Taunt:
+                        Logic.CastQss();
+                        break;
+                }
+
+                switch (name)
+                {
+                    case "zedrdeathmark":
+                        Logic.CastQss();
+                        break;
+                    case "vladimirhemoplague":
+                        Logic.CastQss();
+                        break;
+                    case "fizzmarinerdoom":
+                        Logic.CastQss();
+                        break;
+                    case "mordekaiserchildrenofthegrave":
+                        Logic.CastQss();
+                        break;
+                }
             }
         }
 
