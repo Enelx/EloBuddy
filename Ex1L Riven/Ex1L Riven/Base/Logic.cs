@@ -61,7 +61,7 @@ namespace Ex1L_Riven.Base
 
         public static void CastR(AIHeroClient target)
         {
-            if (Spells.R1.IsReady() && Riven.R1Activated == false && target.IsValidTarget(500))
+            if (Spells.R1.IsReady() && Variables.UseRCombo && Riven.R1Activated == false && target.IsValidTarget(500))
             {
                 Spells.R1.Cast();
             }

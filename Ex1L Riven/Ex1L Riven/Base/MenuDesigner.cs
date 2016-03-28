@@ -8,6 +8,7 @@ namespace Ex1L_Riven.Base
         public const string MenuName = "Ex1L Riven";
 
         public static Menu RivenUi;
+        public static Menu ComboUi;
         public static Menu EmoteUi;
         public static Menu ClearUi;
         public static Menu MiscUi;
@@ -18,6 +19,9 @@ namespace Ex1L_Riven.Base
             RivenUi = MainMenu.AddMenu(MenuName, MenuName.ToLower());
             RivenUi.AddGroupLabel("Welcome to Ex1L Riven");
             RivenUi.AddLabel("Brought to you by Enelx");
+
+            ComboUi = RivenUi.AddSubMenu("Combo");
+            ComboUi.Add("UseR", new KeyBind("Use R in combo", true, KeyBind.BindTypes.HoldActive, 'Z'));
 
             EmoteUi = RivenUi.AddSubMenu("Emote");
             EmoteUi.Add("UseEmote", new CheckBox("Use emote to cancel animation"));

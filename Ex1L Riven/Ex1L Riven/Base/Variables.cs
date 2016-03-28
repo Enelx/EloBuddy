@@ -9,6 +9,15 @@ namespace Ex1L_Riven.Base
         {
         }
 
+        #region Combo Menu
+
+        public static bool UseRCombo
+        {
+            get { return GetKeybind(MenuDesigner.ComboUi, "UseR"); }
+        }
+
+        #endregion
+
         #region Emote Menu
 
         public static bool UseEmoteCancel
