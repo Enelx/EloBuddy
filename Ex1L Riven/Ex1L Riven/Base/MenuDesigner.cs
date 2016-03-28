@@ -21,7 +21,7 @@ namespace Ex1L_Riven.Base
             RivenUi.AddLabel("Brought to you by Enelx");
 
             ComboUi = RivenUi.AddSubMenu("Combo");
-            ComboUi.Add("UseR", new KeyBind("Use R in combo", true, KeyBind.BindTypes.HoldActive, 'Z'));
+            ComboUi.Add("UseR", new KeyBind("Use R in combo", true, KeyBind.BindTypes.PressToggle, 'Z'));
 
             EmoteUi = RivenUi.AddSubMenu("Emote");
             EmoteUi.Add("UseEmote", new CheckBox("Use emote to cancel animation"));
