@@ -8,3 +8,4 @@ C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ex1L Riven\Ex1L 
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ex1L Riven\Ex1L Riven\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ex1L Riven\Ex1L Riven\obj\Debug\Ex1L Riven.exe
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ex1L Riven\Ex1L Riven\obj\Debug\Ex1L Riven.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Ex1L Riven\Ex1L Riven\obj\Debug\Ex1L Riven.csprojResolveAssemblyReference.cache

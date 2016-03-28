@@ -19,7 +19,7 @@ namespace Ex1L_Riven.Modes
             {
                 if (Spells.E.IsReady())
                 {
-                    Spells.E.Cast(target.ServerPosition);
+                    Player.CastSpell(SpellSlot.E, target.ServerPosition);
                 }
                 if (Spells.Flash.IsReady())
                 {
