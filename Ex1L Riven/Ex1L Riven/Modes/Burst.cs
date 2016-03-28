@@ -17,6 +17,11 @@ namespace Ex1L_Riven.Modes
 
             if (target != null && target.IsValidTarget(800))
             {
+                if (Variables.UseItems)
+                {
+                    Items.CastItems(target);
+                }
+
                 if (Spells.E.IsReady())
                 {
                     Player.CastSpell(SpellSlot.E, target.ServerPosition);

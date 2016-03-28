@@ -71,7 +71,7 @@ namespace Ex1L_Riven.Base
 
             R1 = new Spell.Active(SpellSlot.R);
 
-            R2 = new Spell.Skillshot(SpellSlot.R, 900, SkillShotType.Cone, 250, 1600, 20)
+            R2 = new Spell.Skillshot(SpellSlot.R, 900, SkillShotType.Cone, 250, 1600, 125)
             {
                 AllowedCollisionCount = int.MaxValue
             };
