@@ -22,6 +22,9 @@ namespace Ex1L_Riven.Base
 
             ComboUi = RivenUi.AddSubMenu("Combo");
             ComboUi.Add("UseR", new KeyBind("Use R in combo", true, KeyBind.BindTypes.PressToggle, 'Z'));
+            ComboUi.AddGroupLabel("Combos - Normal | Burst");
+            ComboUi.Add("switchCombo", new KeyBind("Switch combo mode", false, KeyBind.BindTypes.HoldActive, 'T'))
+                .OnValueChange += ModeController.ModeSwitch;
 
             EmoteUi = RivenUi.AddSubMenu("Emote");
             EmoteUi.Add("UseEmote", new CheckBox("Use emote to cancel animation"));
