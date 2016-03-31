@@ -1,9 +1,11 @@
 ﻿using System;
-using System.Diagnostics;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
+using EloBuddy.SDK.Menu;
+using EloBuddy.SDK.Rendering;
 using Ex1L_Riven.Base;
+using SharpDX;
 
 namespace Ex1L_Riven
 {
@@ -37,13 +39,14 @@ namespace Ex1L_Riven
             Obj_AI_Base.OnBuffLose += OnBuffLose;
             Interrupter.OnInterruptableSpell += OnInterruptableSpell;
             Gapcloser.OnGapcloser += OnGapcloser;
+            Drawing.OnDraw += OnDraw;
 
             Chat.Print("Ex1L Riven made by Enelx !");
         }
 
         private static void OnProcessSpellCast(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
         {
-            if (sender.IsMe && ModeController.Activemode(Orbwalker.ActiveModes.Combo))
+            if (sender.IsMe && ModeController.Activemode(Orbwalker.ActiveModes.Combo) && ModeController.Mode == 1)
             {
                 var target = TargetSelector.GetTarget(1000, DamageType.Physical);
 
@@ -63,7 +66,7 @@ namespace Ex1L_Riven
                     Logic.CastW(target);
                 }
 
-                if (args.SData.Name == Spells.E.Name && R1Activated && target.Health <= Spells.R2Damage(target))
+                if (args.SData.Name == Spells.E.Name && R1Activated && target.Health <= Spells.R2Damage(target, target.Health))
                 {
                     var prediction = Spells.R2.GetPrediction(target);
                     Spells.R2.Cast(prediction.CastPosition);
@@ -241,6 +244,31 @@ namespace Ex1L_Riven
                     Player.CastSpell(SpellSlot.E, Game.CursorPos);
                 }
                 Spells.W.Cast();
+            }
+        }
+
+        private static void OnDraw(EventArgs args)
+        {
+            if (Player.Instance.IsDead || Shop.IsOpen || MainMenu.IsOpen) return;
+
+            if (Variables.DrawR2Range)
+            {
+                switch (ModeController.Mode)
+                {
+                    case 1:
+                        Circle.Draw(Color.SpringGreen, Spells.R2.Range, Player.Instance.Position);
+                        break;
+                    case 2:
+                        Circle.Draw(Color.Crimson, Spells.R2.Range, Player.Instance.Position);
+                        break;
+                }
+                    
+            }
+
+            if (Variables.DrawR1Status)
+            {
+                var textPos = Drawing.WorldToScreen(Player.Instance.Position);
+                Drawing.DrawText(textPos.X - 35, textPos.Y + 20, System.Drawing.Color.White, Variables.UseRCombo ? "R1 Status [on]" : "R1 Status [off]");
             }
         }
     }

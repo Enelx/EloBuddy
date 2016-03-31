@@ -16,6 +16,11 @@ namespace Ex1L_Riven.Base
             get { return GetKeybind(MenuDesigner.ComboUi, "UseR"); }
         }
 
+        public static bool UseFlashBurst
+        {
+            get { return GetCheckbox(MenuDesigner.ComboUi, "UseFlash"); }
+        }
+
         #endregion
 
         #region Emote Menu
@@ -115,6 +120,20 @@ namespace Ex1L_Riven.Base
         public static int LevelDelay
         {
             get { return GetSlider(MenuDesigner.LevelUi, "LevelHumanizer"); }
+        }
+
+        #endregion
+
+        #region Draw Menu
+
+        public static bool DrawR1Status
+        {
+            get { return GetCheckbox(MenuDesigner.DrawUi, "Rstatus"); }
+        }
+
+        public static bool DrawR2Range
+        {
+            get { return GetCheckbox(MenuDesigner.DrawUi, "Rrange"); }
         }
 
         #endregion

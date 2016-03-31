@@ -15,7 +15,9 @@ namespace Ex1L_Riven.Modes
         {
             var target = TargetSelector.SelectedTarget;
 
-            if (target != null && target.IsValidTarget(800))
+            if (target == null || target.IsZombie || target.IsInvulnerable) return;
+
+            if (target.IsValidTarget(800) && Variables.UseFlashBurst)
             {
                 if (Variables.UseItems)
                 {
@@ -26,39 +28,45 @@ namespace Ex1L_Riven.Modes
                 {
                     Player.CastSpell(SpellSlot.E, target.ServerPosition);
                 }
+
+                if (Spells.R1.IsReady() && Riven.R1Activated == false)
+                {
+                    Spells.R1.Cast();
+                }
+
                 if (Spells.Flash.IsReady())
                 {
                     Spells.Flash.Cast(target.ServerPosition);
                 }
 
-                if (target.IsValidTarget(Spells.W.Range))
-                {
-                    if (Spells.R1.IsReady() && Variables.UseRCombo && Riven.R1Activated == false)
-                    {
-                        Spells.R1.Cast();
-                    }
-                    if (Spells.W.IsReady())
-                    {
-                        Spells.W.Cast();
-                    }
-                    Player.IssueOrder(GameObjectOrder.AttackTo, target);
-                    Logic.CastTiaHydra(target);
+                Logic.CastTiaHydra(target);
+                Logic.CastW(target);
 
-                    if (target.IsValidTarget(Spells.Q.Range))
-                    {
-                        if (Spells.R2.IsReady() && Riven.R1Activated)
-                        {
-                            var prediction = Spells.R2.GetPrediction(target);
-                            Spells.R2.Cast(prediction.CastPosition);
-                        }
-                        if (Spells.Q.IsReady())
-                        {
-                            Spells.Q.Cast(target.ServerPosition);
-                        }
-                    }
+                if (Spells.R2.IsReady() && Riven.R1Activated)
+                {
+                    Spells.R2.Cast(target.ServerPosition);
                 }
 
-                Logic.CastQaa2(target);
+                Logic.CastQ(target);
+            }
+
+            if ((Player.Instance.Distance(target) <= Spells.E.Range) && Spells.E.IsReady() && !Spells.Flash.IsReady())
+            {
+                if (Variables.UseItems)
+                {
+                    Items.CastItems(target);
+                }
+
+                Logic.CastE(target);
+                Logic.CastR(target);
+                Logic.CastTiaHydra(target);
+                Logic.CastW(target);
+                if (Spells.R2.IsReady() && Riven.R1Activated)
+                {
+                    Spells.R2.Cast(target.ServerPosition);
+                }
+
+                Logic.CastQ(target);
             }
         }
     }

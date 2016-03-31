@@ -23,12 +23,9 @@ namespace Ex1L_Riven.Base
                 {
                     case 1:
                         Mode = 2;
-                        Chat.Print("Combo Mode changed to: BURST");
-                        Chat.Print("Pls select your Target");
                         break;
                     case 2:
                         Mode = 1;
-                        Chat.Print("Combo Mode changed to: NORMAL");
                         break;
                 }
             }
