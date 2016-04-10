@@ -1,28 +1,21 @@
-﻿using System.Linq;
-using EloBuddy;
+﻿using EloBuddy;
 using EloBuddy.SDK;
-using _300_Pantheon.Assistants;
+using EloBuddy.SDK.Menu.Values;
+using _300_Pantheon.Base;
 
 namespace _300_Pantheon.Modes
 {
-    public static class Harass
+    internal class Harass
     {
-        public static bool ShouldBeExecuted()
-        {
-            return Return.Activemode(Orbwalker.ActiveModes.Harass);
-        }
-
         public static void Execute()
         {
-            if (Player.Instance.ManaPercent < Return.HarassManaMin) return;
+            if (!Pantheon.Q.IsReady() || !MenuDesigner.HarassUi.Get<CheckBox>("HarassQ").CurrentValue ||
+                !(Player.Instance.ManaPercent > MenuDesigner.HarassUi.Get<Slider>("HarassMana").CurrentValue)) return;
 
-            var target = Logic.CloseEnemies(Spells.Q.Range, Player.Instance.ServerPosition).FirstOrDefault();
+            var target = TargetSelector.GetTarget(Pantheon.Q.Range, DamageType.Physical);
+            if (target == null || target.IsInvulnerable) return;
 
-            if (target != null & target.IsValidTarget(Spells.Q.Range))
-            {
-                if (Return.UseQHarass && Spells.Q.IsReady())
-                    Spells.Q.Cast(target);
-            }
+            Pantheon.Q.Cast(target);
         }
     }
 }

@@ -1,29 +1,30 @@
 ﻿using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
-using _300_Pantheon.Assistants;
+using EloBuddy.SDK.Menu.Values;
+using _300_Pantheon.Base;
 
 namespace _300_Pantheon.Modes
 {
-    public static class Lasthit
+    internal class LastHit
     {
-        public static bool ShouldBeExecuted()
-        {
-            return Return.Activemode(Orbwalker.ActiveModes.LastHit);
-        }
-
         public static void Execute()
         {
-            var minion =
-                Logic.Minions(EntityManager.UnitTeam.Enemy, Spells.Q.Range, Player.Instance.ServerPosition)
-                    .FirstOrDefault();
-
-            var isKillable = Logic.IsKillableMinion(minion, Spells.Q.Range, SpellSlot.Q);
-
-            if (minion != null && !Player.Instance.IsInAutoAttackRange(minion))
+            if (Pantheon.Q.IsReady() && MenuDesigner.ClearUi.Get<CheckBox>("ClearLaneQ").CurrentValue)
             {
-                if (Return.UseQLast && Spells.Q.IsReady() && isKillable)
-                    Spells.Q.Cast(minion);
+                var minion =
+                    EntityManager.MinionsAndMonsters.Minions.Where(
+                        m => m.IsValidTarget(Pantheon.Q.Range) && !m.IsDead && m.IsEnemy)
+                        .OrderBy(m => m.Health)
+                        .Reverse()
+                        .FirstOrDefault();
+
+                if (minion == null) return;
+
+                if (minion.Health <= Player.Instance.GetSpellDamage(minion, SpellSlot.Q))
+                {
+                    Pantheon.Q.Cast(minion);
+                }
             }
         }
     }

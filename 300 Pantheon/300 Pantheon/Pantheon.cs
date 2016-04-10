@@ -1,92 +1,73 @@
 ﻿using System;
 using EloBuddy;
 using EloBuddy.SDK;
+using EloBuddy.SDK.Enumerations;
 using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu;
+using EloBuddy.SDK.Menu.Values;
 using EloBuddy.SDK.Rendering;
 using SharpDX;
-using _300_Pantheon.Assistants;
+using _300_Pantheon.Base;
 
 namespace _300_Pantheon
 {
-    public class Pantheon
+    internal class Pantheon
     {
-        private static void Main(string[] args)
-        {
-            Loading.OnLoadingComplete += OnLoadingComplete;
-        }
+        public static Spell.Targeted Q = new Spell.Targeted(SpellSlot.Q, 600);
+        public static Spell.Targeted W = new Spell.Targeted(SpellSlot.W, 600);
 
-        private static void OnLoadingComplete(EventArgs args)
-        {
-            // Validate Champion
-            if (Player.Instance.Hero != Champion.Pantheon) return;
+        public static Spell.Skillshot E = new Spell.Skillshot(SpellSlot.E, 400, SkillShotType.Cone, 250, 800,
+            (int) (35*Math.PI/180));
 
-            // Initialize Classes
+        internal static void Initialize()
+        {
             MenuDesigner.Initialize();
             ModeController.Initialize();
 
-            //  Events
-            Obj_AI_Base.OnProcessSpellCast += OnProcessSpellCast;
-            Obj_AI_Base.OnBuffLose += OnBuffLose;
-            Orbwalker.OnPostAttack += OnPostAttack;
-            Interrupter.OnInterruptableSpell += OnInterruptableSpell;
-            Gapcloser.OnGapcloser += OnGapcloser;
             Drawing.OnDraw += OnDraw;
+            Obj_AI_Base.OnSpellCast += OnSpellCast;
+            Obj_AI_Base.OnBuffLose += OnBuffLose;
+            Gapcloser.OnGapcloser += OnGapcloser;
+            Interrupter.OnInterruptableSpell += OnInterruptableSpell;
         }
 
-        public static void OnProcessSpellCast(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
+        private static void OnDraw(EventArgs args)
         {
-            if (sender.IsMe && args.SData.Name == Spells.E.Name)
-            {
-                Orbwalker.DisableAttacking = true;
-                Orbwalker.DisableMovement = true;
-            }
+            if (Player.Instance.IsDead || Shop.IsOpen || MainMenu.IsOpen ||
+                !MenuDesigner.MiscUi.Get<CheckBox>("MiscDrawQW").CurrentValue) return;
+
+            Circle.Draw(Color.Orange, Q.Range, Player.Instance);
         }
 
-        public static void OnBuffLose(Obj_AI_Base sender, Obj_AI_BaseBuffLoseEventArgs args)
+        private static void OnSpellCast(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
         {
-            const string buff = "pantheonesound";
-
-            if (sender.IsMe && args.Buff.Name == buff)
-            {
-                Orbwalker.DisableAttacking = false;
-                Orbwalker.DisableMovement = false;
-            }
+            if (!sender.IsMe || args.Slot == SpellSlot.E) return;
+            Orbwalker.DisableAttacking = true;
+            Orbwalker.DisableMovement = true;
         }
 
-        public static void OnPostAttack(AttackableUnit target, EventArgs args)
+        private static void OnBuffLose(Obj_AI_Base sender, Obj_AI_BaseBuffLoseEventArgs args)
         {
-            if (Return.Activemode(Orbwalker.ActiveModes.Combo) && Return.UseAgressiveItems && target != null)
-            {
-                if (Items.Tiamat.IsOwned() && Items.Tiamat.IsReady() && target.IsValidTarget(Items.Tiamat.Range))
-                    Items.Tiamat.Cast();
-                else if (Items.Hydra.IsOwned() && Items.Hydra.IsReady() && target.IsValidTarget(Items.Hydra.Range))
-                    Items.Tiamat.Cast();
-            }
+            if (!sender.IsMe || args.Buff.Name != "pantheonesound") return;
+            Orbwalker.DisableAttacking = false;
+            Orbwalker.DisableMovement = false;
         }
 
-        public static void OnGapcloser(AIHeroClient sender, Gapcloser.GapcloserEventArgs e)
+        private static void OnGapcloser(AIHeroClient sender, Gapcloser.GapcloserEventArgs e)
         {
-            if (!sender.IsEnemy || sender.IsUnderEnemyturret()) return;
+            if (!sender.IsEnemy || sender.IsUnderEnemyturret() ||
+                !MenuDesigner.MiscUi.Get<CheckBox>("GapW").CurrentValue || !W.IsReady() || !W.IsInRange(e.End)) return;
 
-            if (Return.UseWGapclose && sender.IsValidTarget(Spells.W.Range) && Spells.W.IsReady())
-                Spells.W.Cast(sender);
+            W.Cast(sender);
         }
 
-        public static void OnInterruptableSpell(Obj_AI_Base sender, Interrupter.InterruptableSpellEventArgs e)
+        private static void OnInterruptableSpell(Obj_AI_Base sender, Interrupter.InterruptableSpellEventArgs e)
         {
-            if (Return.UseWInterrupt && sender.IsValidTarget(Spells.W.Range) && Spells.W.IsReady())
-                Spells.W.Cast(sender);
-        }
+            if (!sender.IsEnemy || e.DangerLevel != DangerLevel.High ||
+                !MenuDesigner.MiscUi.Get<CheckBox>("InterW").CurrentValue || !W.IsReady() || !E.IsInRange(sender))
+                return;
 
-        public static void OnDraw(EventArgs args)
-        {
-            if (Player.Instance.IsDead || Shop.IsOpen || MainMenu.IsOpen) return;
-
-            if (Return.DrawQweRange)
-            {
-                Circle.Draw(Color.Orange, Spells.Q.Range, 1, Player.Instance.Position);
-            }
+            W.Cast(sender);
         }
     }
 }

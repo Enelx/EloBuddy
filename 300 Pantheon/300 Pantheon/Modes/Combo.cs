@@ -1,35 +1,38 @@
-﻿using System.Linq;
+﻿using System.Runtime.InteropServices;
 using EloBuddy;
 using EloBuddy.SDK;
-using _300_Pantheon.Assistants;
+using EloBuddy.SDK.Menu.Values;
+using _300_Pantheon.Base;
 
 namespace _300_Pantheon.Modes
 {
-    public static class Combo
+    internal class Combo
     {
-        public static bool ShouldBeExecuted()
-        {
-            return Return.Activemode(Orbwalker.ActiveModes.Combo);
-        }
-
         public static void Execute()
         {
-            var target = Logic.CloseEnemies(Spells.Q.Range, Player.Instance.ServerPosition).FirstOrDefault();
-
-            if (target == null || !target.IsValidTarget(Spells.Q.Range)) return;
-
-            if (Return.UseAgressiveItems)
-                Items.CastItems(target);
-
-            if (Return.UseQCombo && Spells.Q.IsReady())
-                Spells.Q.Cast(target);
-            else if (Return.UseWCombo && Spells.W.IsReady())
-                Spells.W.Cast(target);
-            else if (Return.UseECombo && Spells.E.IsReady())
+            if (Pantheon.Q.IsReady() && MenuDesigner.ComboUi.Get<CheckBox>("ComboQ").CurrentValue)
             {
-                var pred = Spells.E.GetPrediction(target);
+                var target = TargetSelector.GetTarget(Pantheon.Q.Range, DamageType.Physical);
+                if (target == null || target.IsInvulnerable) return;
 
-                Spells.E.Cast(pred.CastPosition);
+                Pantheon.Q.Cast(target);
+            }
+
+            else if (Pantheon.W.IsReady() && MenuDesigner.ComboUi.Get<CheckBox>("ComboW").CurrentValue)
+            {
+                var target = TargetSelector.GetTarget(Pantheon.W.Range, DamageType.Physical);
+                if (target == null || target.IsInvulnerable) return;
+
+                Pantheon.W.Cast(target);
+            }
+
+            else if (Pantheon.E.IsReady() && MenuDesigner.ComboUi.Get<CheckBox>("ComboE").CurrentValue)
+            {
+                var target = TargetSelector.GetTarget(Pantheon.E.Range, DamageType.Physical);
+                if (target == null || target.IsInvulnerable) return;
+
+                var prediction = Pantheon.E.GetPrediction(target);
+                Pantheon.E.Cast(prediction.CastPosition);
             }
         }
     }

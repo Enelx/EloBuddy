@@ -1,35 +1,33 @@
-﻿using System.Linq;
-using EloBuddy;
-using _300_Pantheon.Assistants;
+﻿using EloBuddy;
+using EloBuddy.SDK;
+using EloBuddy.SDK.Menu.Values;
+using _300_Pantheon.Base;
 
 namespace _300_Pantheon.Modes
 {
-    public static class PermaActive
+    internal class PermaActive
     {
-        public static bool ShouldBeExecuted()
-        {
-            return true;
-        }
-
         public static void Execute()
         {
-            if (Return.UseQKs && Spells.Q.IsReady())
+            if (Pantheon.Q.IsReady() && MenuDesigner.KsUi.Get<CheckBox>("KsQ").CurrentValue)
             {
-                var target = Logic.CloseEnemies(Spells.Q.Range, Player.Instance.ServerPosition).FirstOrDefault();
+                var target = TargetSelector.GetTarget(Pantheon.Q.Range, DamageType.Physical);
+                if (target == null || target.IsInvulnerable) return;
 
-                if (Logic.IsKillableTarget(target, Spells.Q.Range, SpellSlot.Q))
+                if (target.TotalShieldHealth() <= Player.Instance.GetSpellDamage(target, SpellSlot.Q))
                 {
-                    Spells.Q.Cast(target);
+                    Pantheon.Q.Cast(target);
                 }
             }
 
-            if (Return.UseWKs && Spells.W.IsReady())
+            if (Pantheon.W.IsReady() && MenuDesigner.KsUi.Get<CheckBox>("KsW").CurrentValue)
             {
-                var target = Logic.CloseEnemies(Spells.W.Range, Player.Instance.ServerPosition).FirstOrDefault();
+                var target = TargetSelector.GetTarget(Pantheon.W.Range, DamageType.Physical);
+                if (target == null || target.IsInvulnerable) return;
 
-                if (Logic.IsKillableTarget(target, Spells.W.Range, SpellSlot.W))
+                if (target.TotalShieldHealth() <= Player.Instance.GetSpellDamage(target, SpellSlot.W))
                 {
-                    Spells.W.Cast(target);
+                    Pantheon.W.Cast(target);
                 }
             }
         }

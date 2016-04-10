@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7A8E1E3E-503F-4C3E-9567-73C3BCA3BCBC}</ProjectGuid>
+    <ProjectGuid>{43C0EF86-B88D-43F9-BE4D-EC3A124FC2EA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>_300_Pantheon</RootNamespace>
@@ -51,19 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assistants\Items.cs" />
-    <Compile Include="Assistants\Logic.cs" />
-    <Compile Include="Assistants\MenuDesigner.cs" />
-    <Compile Include="Assistants\ModeController.cs" />
-    <Compile Include="Assistants\Return.cs" />
-    <Compile Include="Assistants\Spells.cs" />
-    <Compile Include="Modes\Clear.cs" />
-    <Compile Include="Modes\PermaActive.cs" />
+    <Compile Include="Base\MenuDesigner.cs" />
+    <Compile Include="Base\ModeController.cs" />
     <Compile Include="Modes\Combo.cs" />
     <Compile Include="Modes\Harass.cs" />
-    <Compile Include="Modes\Jungle.cs" />
-    <Compile Include="Modes\Lasthit.cs" />
+    <Compile Include="Modes\JungleClear.cs" />
+    <Compile Include="Modes\LaneClear.cs" />
+    <Compile Include="Modes\LastHit.cs" />
+    <Compile Include="Modes\PermaActive.cs" />
     <Compile Include="Pantheon.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
