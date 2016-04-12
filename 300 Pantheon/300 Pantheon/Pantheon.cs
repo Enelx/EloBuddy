@@ -25,7 +25,7 @@ namespace _300_Pantheon
             ModeController.Initialize();
 
             Drawing.OnDraw += OnDraw;
-            Obj_AI_Base.OnSpellCast += OnSpellCast;
+            Obj_AI_Base.OnProcessSpellCast += OnProcessSpellCast;
             Obj_AI_Base.OnBuffLose += OnBuffLose;
             Gapcloser.OnGapcloser += OnGapcloser;
             Interrupter.OnInterruptableSpell += OnInterruptableSpell;
@@ -39,9 +39,9 @@ namespace _300_Pantheon
             Circle.Draw(Color.Orange, Q.Range, Player.Instance);
         }
 
-        private static void OnSpellCast(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
+        private static void OnProcessSpellCast(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
         {
-            if (!sender.IsMe || args.Slot == SpellSlot.E) return;
+            if (!sender.IsMe || args.Slot != SpellSlot.E) return;
             Orbwalker.DisableAttacking = true;
             Orbwalker.DisableMovement = true;
         }
