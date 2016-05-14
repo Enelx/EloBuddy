@@ -1,0 +1,11 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Smart Potion\Smart Potion\bin\Release\Smart Potion.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Smart Potion\Smart Potion\bin\Release\Smart Potion.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Smart Potion\Smart Potion\bin\Release\Smart Potion.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Smart Potion\Smart Potion\bin\Release\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Smart Potion\Smart Potion\bin\Release\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Smart Potion\Smart Potion\bin\Release\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Smart Potion\Smart Potion\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Smart Potion\Smart Potion\bin\Release\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Smart Potion\Smart Potion\bin\Release\EloBuddy.Sandbox.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Smart Potion\Smart Potion\obj\Release\Smart Potion.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\Smart Potion\Smart Potion\obj\Release\Smart Potion.pdb
