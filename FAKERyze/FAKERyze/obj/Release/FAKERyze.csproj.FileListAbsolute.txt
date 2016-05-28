@@ -1,0 +1,12 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\bin\Release\FAKERyze.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\bin\Release\FAKERyze.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\bin\Release\FAKERyze.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\bin\Release\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\bin\Release\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\bin\Release\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\bin\Release\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\bin\Release\EloBuddy.Sandbox.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\obj\Release\FAKERyze.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\obj\Release\FAKERyze.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\obj\Release\FAKERyze.csprojResolveAssemblyReference.cache
