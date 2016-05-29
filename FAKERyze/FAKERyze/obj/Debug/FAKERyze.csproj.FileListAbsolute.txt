@@ -9,4 +9,3 @@ C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyz
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\bin\Debug\EloBuddy.Sandbox.dll
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\obj\Debug\FAKERyze.exe
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\obj\Debug\FAKERyze.pdb
-C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\FAKERyze\FAKERyze\obj\Debug\FAKERyze.csprojResolveAssemblyReference.cache

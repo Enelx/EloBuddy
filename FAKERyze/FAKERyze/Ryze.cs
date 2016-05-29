@@ -3,6 +3,7 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
 using EloBuddy.SDK.Events;
+using EloBuddy.SDK.Menu.Values;
 using EloBuddy.SDK.Rendering;
 using FAKERyze.Base;
 using SharpDX;
@@ -18,6 +19,7 @@ namespace FAKERyze
 
         internal static void Initialize()
         {
+            MenuDesigner.Initialize();
             ModeController.Initialize();
 
             Drawing.OnDraw += OnDraw;
@@ -28,7 +30,7 @@ namespace FAKERyze
 
         private static void OnDraw(EventArgs args)
         {
-            if (Player.Instance.IsDead || Shop.IsOpen || !Q.IsReady()) return;
+            if (Player.Instance.IsDead || Shop.IsOpen || !Q.IsReady() || !MenuDesigner.ConfigUi.Get<CheckBox>("DrawQ").CurrentValue) return;
 
             Circle.Draw(Color.MediumBlue, Q.Range, Player.Instance);
         }

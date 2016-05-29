@@ -23,6 +23,11 @@ namespace FAKERyze.Base
                 Combo.Execute();
             }
 
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass))
+            {
+                Harass.Execute();
+            }
+
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
             {
                 LaneClear.Execute();
