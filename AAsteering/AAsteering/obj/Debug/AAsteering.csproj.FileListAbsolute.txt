@@ -1,0 +1,10 @@
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\bin\Debug\AAsteering.exe.config
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\bin\Debug\AAsteering.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\bin\Debug\AAsteering.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\bin\Debug\EloBuddy.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\bin\Debug\SharpDX.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\obj\Debug\AAsteering.exe
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\obj\Debug\AAsteering.pdb
