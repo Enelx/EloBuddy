@@ -17,14 +17,14 @@ namespace AAsteering
 
             _aamenu = MainMenu.AddMenu("AAsteering", "AAsteering");
             _aamenu.AddLabel("This only works, if your aa range is > target's aa range");
-            _aamenu.Add("UseAA", new CheckBox("Enable AAsteering"));
+            _aamenu.Add("UseAA", new KeyBind("Enable AAsteering", true, KeyBind.BindTypes.PressToggle, 'T'));
 
             Game.OnTick += OnTick;
         }
 
         private static void OnTick(EventArgs args)
         {
-            if (!_aamenu["UseAA"].Cast<CheckBox>().CurrentValue) return;
+            if (!_aamenu["UseAA"].Cast<KeyBind>().CurrentValue) return;
 
             foreach (
                 var target in

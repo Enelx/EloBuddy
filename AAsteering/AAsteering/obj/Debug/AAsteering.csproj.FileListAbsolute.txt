@@ -8,3 +8,4 @@ C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAste
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\obj\Debug\AAsteering.exe
 C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\obj\Debug\AAsteering.pdb
+C:\Users\Leander\Documents\Visual Studio 2012\Projects\EloBuddy\AAsteering\AAsteering\obj\Debug\AAsteering.csprojResolveAssemblyReference.cache
