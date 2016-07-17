@@ -18,13 +18,17 @@ namespace AAsteering
             _aamenu = MainMenu.AddMenu("AAsteering", "AAsteering");
             _aamenu.AddLabel("This only works, if your aa range is > target's aa range");
             _aamenu.Add("UseAA", new KeyBind("Enable AAsteering", true, KeyBind.BindTypes.PressToggle, 'T'));
+            _aamenu.Add("ComboOff", new CheckBox("Disable while Combo Mode", false));
 
             Game.OnTick += OnTick;
         }
 
         private static void OnTick(EventArgs args)
         {
-            if (!_aamenu["UseAA"].Cast<KeyBind>().CurrentValue) return;
+            if (!_aamenu["UseAA"].Cast<KeyBind>().CurrentValue ||
+                (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo) &&
+                 _aamenu["ComboOff"].Cast<CheckBox>().CurrentValue)) return;
+
 
             foreach (
                 var target in
